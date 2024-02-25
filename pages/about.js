@@ -16,8 +16,8 @@ export default function About() {
             <div>
                 <Navbar />
                 <div className={` flex justify-center items-center flex-col gap-10 text-justify p-10 ${montserrat.className}`}>
-                    <h1 className='text-2xl md:text-3xl border-4 border-transparent border-b-yellow-500'>About Me <i className="fa-regular fa-user"></i></h1>
-                    <p className='md:mx-96 font-medium md:w-full xl:w-auto'>As a recent graduate with a Bachelor's in Computer Applications, I am excited to launch my career as a Frontend Developer. Proficient in HTML, CSS, and JavaScript, I possess a solid foundation in Next.js and considerable expertise in Tailwind CSS, empowering me to tackle frontend tasks with ingenuity and accuracy. <br /><br />
+                    <h1 className="text-2xl md:text-3xl border-4 border-transparent border-b-yellow-500">About Me <i className="fa-regular fa-user"></i></h1>
+                    <p className="md:mx-96 font-medium md:w-full xl:w-auto">As a recent graduate with a Bachelor's in Computer Applications, I am excited to launch my career as a Frontend Developer. Proficient in HTML, CSS, and JavaScript, I possess a solid foundation in Next.js and considerable expertise in Tailwind CSS, empowering me to tackle frontend tasks with ingenuity and accuracy. <br /><br />
 
                         My engagement in bug hunting through platforms like HackerOne and Bugcrowd has refined my abilities to detect and address vulnerabilities, fostering a fundamental grasp of web application security. Moreover, my exposure to backend operations and APIs bolsters my adaptability in web development.<br /><br />
 
