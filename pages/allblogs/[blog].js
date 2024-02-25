@@ -18,7 +18,6 @@ export default function blog({ data }) {
       <div className={`${montserrat.className}  flex text-left`}>
         <div>
           {blog &&
-
             <div>
               <Head>
                 <title>{blog.title} | By {blog.author}</title>

@@ -1,15 +1,15 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Montserrat } from 'next/font/google'
 import Link from 'next/link'
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] })
 
 export default function blogs({ repo }) {
-  const ref = useRef(null);
-  React.useEffect(() => {
+
+  useEffect(() => {
     import("@lottiefiles/lottie-player");
   });
 
@@ -25,7 +25,6 @@ export default function blogs({ repo }) {
         <div className='text-center text-3xl md:text-6xl  flex flex-col items-center justify-center'>
           <lottie-player
             id="firstLottie"
-            ref={ref}
             autoplay
             loop
             mode="normal"
