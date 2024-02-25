@@ -4,10 +4,15 @@ import Footer from './components/Footer';
 import Head from 'next/head';
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] });
 
 export default function Blogs({ repo }) {
+  useEffect(() => {
+    Aos.init();
+  }, [])
   useEffect(() => {
     import("@lottiefiles/lottie-player");
   }, []);
@@ -24,7 +29,7 @@ export default function Blogs({ repo }) {
           <title>Blogs</title>
         </Head>
         <Navbar />
-        <div className='text-center text-3xl md:text-6xl  flex flex-col items-center justify-center'>
+        <div  data-aos="fade-in" className='text-center text-3xl md:text-6xl  flex flex-col items-center justify-center'>
           <lottie-player
             id="firstLottie"
             autoplay
@@ -37,7 +42,7 @@ export default function Blogs({ repo }) {
         </div>
         <hr className='my-10' />
         {blogdata && blogdata.map((item) => (
-          <section className="text-gray-600 my-28 body-font" key={item.slug}>
+          <section data-aos="fade-up" className="text-gray-600 my-28 body-font" key={item.slug}>
             <div className="container px-5 mx-auto">
               <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
                 <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-yellow-100 text-yellow-500 flex-shrink-0">

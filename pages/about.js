@@ -1,11 +1,16 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
+import Aos from "aos";
+import 'aos/dist/aos.css'
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] });
 
 export default function About() {
+    useEffect(() => {
+        Aos.init();
+    }, [])
     return (
         <>
             <Head>
@@ -15,7 +20,7 @@ export default function About() {
             </Head>
             <div>
                 <Navbar />
-                <div className={` flex justify-center items-center flex-col gap-10 text-justify p-10 ${montserrat.className}`}>
+                <div data-aos="fade-in  " className={` flex justify-center items-center flex-col gap-10 text-justify p-10 ${montserrat.className}`}>
                     <h1 className='text-2xl md:text-3xl border-4 border-transparent border-b-yellow-500'>About Me <i className="fa-regular fa-user"></i></h1>
                     <p className='md:mx-96 font-medium md:w-full xl:w-auto'>As a recent graduate with a Bachelor&apos;s in Computer Applications, I am excited to launch my career as a Frontend Developer. Proficient in HTML, CSS, and JavaScript, I possess a solid foundation in Next.js and considerable expertise in Tailwind CSS, empowering me to tackle frontend tasks with ingenuity and accuracy. <br /><br />
 
@@ -24,7 +29,7 @@ export default function About() {
                         Fueled by a fervor for continual growth, I am dedicated to staying updated on industry trends and technologies. With a proven ability to acclimate to various work environments, I am well-positioned to deliver meaningful contributions to any team. Prepared to embark on this thrilling journey, I am eager to bring my expertise and passion to a vibrant workplace.</p>
                 </div>
                 <hr />
-                <section className={`text-gray-600 body-font ${montserrat.className}`}>
+                <section data-aos="fade-up" className={`text-gray-600 body-font ${montserrat.className}`}>
                     <div className="container px-5 py-12 mx-auto flex flex-wrap shadow-2xl rounded-3xl">
                         <div className="flex flex-wrap w-full">
                             <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-32 md:text-xl">
@@ -89,7 +94,7 @@ export default function About() {
                         </div>
                     </div>
                 </section>
-                <section className={`text-gray-600 body-font ${montserrat.className}`}>
+                <section data-aos="fade-up" className={`text-gray-600 body-font ${montserrat.className}`}>
                     <div className="container px-5 py-24 mx-auto">
                         <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="inline-block w-8 h-8 text-gray-400 mb-8" viewBox="0 0 975.036 975.036">
