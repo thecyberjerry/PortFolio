@@ -35,13 +35,22 @@ export default function submitbug() {
                 <div className='flex'>
                     <h1 className='text-xl md:text-2xl border-b-yellow-300 border-4 border-transparent'>Rewards:</h1>
                 </div>
-                <div className='p-5 text-justify'><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae dolorum debitis dolorem cupiditate, nihil illum facere recusandae optio voluptas neque animi repudiandae possimus? Reprehenderit molestias nostrum doloremque illo est sint, et repellendus repudiandae dolorem unde nam veniam velit fuga maiores culpa dolores. Quisquam quidem hic eaque, sit dignissimos voluptatibus adipisci omnis deleniti unde exercitationem, fugiat ab odit, id similique fugit reprehenderit vero a debitis aperiam harum aliquid? Atque dolorem, culpa excepturi cumque voluptatem maiores ad perspiciatis hic earum maxime quas ipsum nulla! Nemo praesentium id ex ad mollitia sint asperiores, sit ab. Sequi soluta cumque sunt ducimus inventore nihil itaque.</p></div>
+                <div className='p-5 text-justify'><p>
+                    At the core of my commitment to safeguarding the security and reliability of my portfolio is a deep appreciation for the efforts of security researchers and ethical hackers who diligently uncover and report potential vulnerabilities. While I currently do not offer monetary rewards for such contributions, I extend my sincere gratitude through the following means:
+
+                    Firstly, I will provide an official appreciation letter to express my gratitude and formally recognize your invaluable contribution to the security of my portfolio. This letter serves as a testament to your expertise and dedication in ensuring a safe online environment for all users.
+
+                    Additionally, your name will be prominently featured in my Hall of Fame, a distinguished section dedicated to honoring individuals who responsibly disclose security vulnerabilities. This public acknowledgment not only underscores your commitment to cybersecurity but also highlights your pivotal role in enhancing the overall security posture of my portfolio.
+
+                    Furthermore, by participating in my responsible disclosure program, you become an integral part of my trusted network of security researchers. This affiliation may lead to potential future opportunities, such as collaboration on beta testing of new features or projects, where your insights and expertise will be highly valued.
+
+                    Your contributions play a vital role in upholding the security and integrity of my portfolio, ensuring a positive and secure user experience for all visitors. I extend my heartfelt appreciation for your dedication and commend you for making a meaningful difference in fostering a safer online environment. Together, we can continue to strive towards creating a more secure digital landscape for everyone.</p></div>
                 <div className='flex'>
                     <h1 className='text-xl md:text-2xl border-b-yellow-300 border-4 border-transparent'>Legal Protections:</h1>
                 </div>
                 <div className='p-5 text-justify'><p>The Portfolio Owner and Recipient hereby agree to a Responsible Disclosure Agreement to safeguard the disclosure of the Portfolio Owner's personal portfolio. The Recipient commits to handling such information confidentially and promptly notifying the Portfolio Owner of any discovered vulnerabilities or issues. Disclosure to third parties is strictly prohibited without explicit written consent from the Portfolio Owner. The Portfolio Owner agrees not to take legal action against the Recipient for disclosures made in accordance with this Agreement. The Recipient pledges not to exploit any discovered vulnerabilities for personal gain or malicious purposes. The Portfolio Owner indemnifies and holds harmless the Recipient from claims arising from the personal portfolio, except in cases of gross negligence or willful misconduct by the Recipient. This Agreement is governed by the laws of the respective jurisdiction and constitutes the entire understanding between the parties. Modifications require written consent from both parties.
                     <br />
-                    </p></div>
+                </p></div>
                 <div className='p-5 text-justify'>
                     <ol className='list-decimal p-4'>
                         <li className='p-2'>We will use your personal data to contact you</li>
