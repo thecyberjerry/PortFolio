@@ -67,7 +67,7 @@ export default function About() {
                                         </svg>
                                     </div>
                                     <div className="flex-grow pl-4">
-                                        <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">Bachelor's in Computer Application</h2>
+                                        <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">Bachelor&apos;s in Computer Application</h2>
                                         <p className="leading-relaxed">Graduated with an overall 69% from Tilak Raj Chadha Institute of management and technology from Kurukshetra University.</p>
                                     </div>
                                 </div>
