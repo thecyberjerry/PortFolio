@@ -80,7 +80,7 @@ export default function About() {
                                     </div>
                                     <div className="flex-grow pl-4">
                                         <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">Enhancing Skills</h2>
-                                        <p className="leading-relaxed">Currently gaining and enhacning skills and brushing proficiency in frontend tech-stack like: HTML, CSS,TAILWIND-CSS, Javascript, ReactJS & NextJS.</p>
+                                        <p className="leading-relaxed">Currently gaining and enhancing skills and brushing proficiency in frontend tech-stack like: HTML, CSS,TAILWIND-CSS, Javascript, ReactJS &amp; NextJS.</p>
                                     </div>
                                 </div>
                             </div>
