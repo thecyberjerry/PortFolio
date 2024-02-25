@@ -1,9 +1,9 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import { Montserrat } from 'next/font/google'
-import Head from 'next/head'
-const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] })
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import { Montserrat } from 'next/font/google';
+import Head from 'next/head';
+const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] });
 
 export default function About() {
     return (
@@ -16,8 +16,8 @@ export default function About() {
             <div>
                 <Navbar />
                 <div className={` flex justify-center items-center flex-col gap-10 text-justify p-10 ${montserrat.className}`}>
-                    <h1 className="text-2xl md:text-3xl border-4 border-transparent border-b-yellow-500">About Me <i className="fa-regular fa-user"></i></h1>
-                    <p className="md:mx-96 font-medium md:w-full xl:w-auto">As a recent graduate with a Bachelor's in Computer Applications, I am excited to launch my career as a Frontend Developer. Proficient in HTML, CSS, and JavaScript, I possess a solid foundation in Next.js and considerable expertise in Tailwind CSS, empowering me to tackle frontend tasks with ingenuity and accuracy. <br /><br />
+                    <h1 className='text-2xl md:text-3xl border-4 border-transparent border-b-yellow-500'>About Me <i className="fa-regular fa-user"></i></h1>
+                    <p className='md:mx-96 font-medium md:w-full xl:w-auto'>As a recent graduate with a Bachelor&apos;s in Computer Applications, I am excited to launch my career as a Frontend Developer. Proficient in HTML, CSS, and JavaScript, I possess a solid foundation in Next.js and considerable expertise in Tailwind CSS, empowering me to tackle frontend tasks with ingenuity and accuracy. <br /><br />
 
                         My engagement in bug hunting through platforms like HackerOne and Bugcrowd has refined my abilities to detect and address vulnerabilities, fostering a fundamental grasp of web application security. Moreover, my exposure to backend operations and APIs bolsters my adaptability in web development.<br /><br />
 
@@ -33,7 +33,7 @@ export default function About() {
                                         <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                                     </div>
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                         </svg>
                                     </div>
@@ -47,7 +47,7 @@ export default function About() {
                                         <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                                     </div>
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                                         </svg>
                                     </div>
@@ -61,7 +61,7 @@ export default function About() {
                                         <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                                     </div>
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                             <circle cx="12" cy="5" r="3"></circle>
                                             <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
                                         </svg>
@@ -73,7 +73,7 @@ export default function About() {
                                 </div>
                                 <div className="flex relative">
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                             <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                             <path d="M22 4L12 14.01l-3-3"></path>
                                         </svg>
@@ -109,5 +109,5 @@ export default function About() {
             </div>
 
         </>
-    )
+    );
 }
