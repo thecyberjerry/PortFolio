@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Montserrat } from 'next/font/google'
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] })
 
-export default function blog({ data }) {
+export default function Blog({ data }) {
   const [blog, setblog] = useState(data)
   function createMarkup(c) {
     return { __html: c };
