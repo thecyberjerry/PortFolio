@@ -13,7 +13,10 @@ export default function Blogs({ repo }) {
   }, []);
 
   const [blogdata, setBlogData] = useState(repo);
-
+  useEffect(() => {
+    fetch("api/fetchblogs").then((data) => { return data.json() }).then((response) => { return setBlogData(response) })
+  }, [])
+  console.log(blogdata)
   return (
     <>
       <div className={`${montserrat.className}`}>
@@ -60,8 +63,8 @@ export default function Blogs({ repo }) {
   );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/fetchblogs');
-  const repo = await res.json();
-  return { props: { repo } };
-}
+// export async function getServerSideProps() {
+//   const res = await fetch('http://localhost:3000/api/fetchblogs');
+//   const repo = await res.json();
+//   return { props: { repo } };
+// }

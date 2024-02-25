@@ -3,10 +3,16 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Head from 'next/head';
 import { Montserrat } from 'next/font/google';
+import { useRouter } from 'next/router';
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] });
 
 export default function Blog({ data }) {
   const [blog, setBlog] = useState(data); // Corrected useState function name
+  const router = useRouter();
+
+  useEffect(() => {
+    fetch(`/api/getblog?blog=${router.query.blog}`).then((data) => {if(data.status === 404 ){router.push('/blogs')}else{return data.json()}}).then((response) => { return setBlog(response) })
+  }, [router.query.blog])
 
   function createMarkup(c) {
     return { __html: c };
@@ -38,19 +44,4 @@ export default function Blog({ data }) {
       <Footer />
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  const { blog } = context.query;
-  const res = await fetch(`http://localhost:3000/api/getblog?blog=${blog}`);
-  const data = await res.json();
-  if (res.status === 404) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/blogs'
-      }
-    };
-  }
-  return { props: { data } };
 }
