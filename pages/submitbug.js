@@ -55,7 +55,7 @@ export default function submitbug() {
                     <ol className='list-decimal p-4'>
                         <li className='p-2'>We will use your personal data to contact you</li>
                         <li className='p-2'>Your personal data or contact information will be stored to us for any further legal investigation as per INDIAN Government rules</li>
-                        <li className='p-2'>We won't disclose your personal information publicaly except authorities.</li>
+                        <li className='p-2'>We won&apos;t disclose your personal information publicly except to authorities.</li>
                     </ol>
                 </div>
                 <div className='flex'>
