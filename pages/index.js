@@ -11,7 +11,8 @@ const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] })
 
 export default function Home() {
   useEffect(() => {
-    Aos.init();
+    Aos.init(
+    );
   }, [])
   
   return (
@@ -21,7 +22,7 @@ export default function Home() {
       <Head><title>Home</title></Head>
       <section className={`text-gray-600 body-font ${montserrat.className}`}>
         <div className="container px-5 py-24 mx-auto">
-          <div data-aos="fade-up"  className="flex flex-wrap w-full mb-20">
+          <div  className="flex flex-wrap w-full mb-20">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">TechStack I work on</h1>
               <div className="h-1 w-20 bg-yellow-500 rounded"></div>
