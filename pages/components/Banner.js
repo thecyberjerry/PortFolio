@@ -36,7 +36,7 @@ const Banner = () => {
 
                             <i className="fa-solid fa-code"></i> <span>
                             </span></p>
-                        <Link href="/blogs" className="bg-black text-white py-4 px-12 rounded-full hover:bg-white hover:text-black  transition">View Blogs</Link>
+                        <Link href="https://drive.google.com/file/d/1xh_9pnGzdAO7_q-dq8xtb44vPq9v6vLq/view?usp=sharing" target='_blank' className="bg-black text-white py-4 px-12 rounded-full hover:bg-white hover:text-black  transition">View Resume</Link>
                         <br />
                         <span className='relative top-10 text-3xl space-x-10'><a target="_blank" href='https://linkedin.com/in/thecyberjerry'><i className="hover:-translate-y-2 cursor-pointer transition fa-brands fa-linkedin"></i></a><a target="_blank" href='https://instagram.com/himanshupandat19'><i className="hover:-translate-y-2 cursor-pointer transition fa-brands fa-instagram"></i></a><a target="_blank" href='https://twitter.com/thecyberjerry'><i className="hover:-translate-y-2 cursor-pointer transition fa-brands fa-twitter"></i></a><a target="_blank" href='https://github.com/thecyberjerry'><i className="hover:-translate-y-2 cursor-pointer transition fa-brands fa-github"></i></a></span>
                     </div>
