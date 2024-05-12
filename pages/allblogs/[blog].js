@@ -20,22 +20,22 @@ export default function Blog({ data }) {
 
   function createMarkup(c) {
     return { __html: c };
-  } 
+  }
 
   return (
     <>
       <Navbar />
-      <div   data-aos="fade-up"  className={`${montserrat.className}  flex text-left`}>
+      <div data-aos="fade-up" className={`${montserrat.className}  flex text-left`}>
         <div >
           {blog &&
-            <div>
+            <div >
               <Head>
                 <title>{blog.title} | By {blog.author}</title>
               </Head>
               <div className=' flex justify-center text-3xl pt-14 font-bold text-center'>
                 {blog.title}
               </div>
-              <div className='px-10 py-10  md:px-64' dangerouslySetInnerHTML={createMarkup(blog.content)}>
+              <div className='px-10 py-10  md:px-32 text-sm md:text-xl' dangerouslySetInnerHTML={createMarkup(blog.content)}>
                 {/* {blog.content} */}
               </div>
               <div className='flex text-center justify-end px-20 md:px-64'>
