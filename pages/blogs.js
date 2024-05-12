@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Head from 'next/head';
 import { Montserrat } from 'next/font/google';
+import Image from 'next/image';
 import Link from 'next/link';
 import Aos from "aos";
 import 'aos/dist/aos.css'
@@ -21,7 +22,6 @@ export default function Blogs({ repo }) {
   useEffect(() => {
     fetch("api/fetchblogs").then((data) => { return data.json() }).then((response) => { return setBlogData(response) })
   }, [])
-  console.log(blogdata)
   return (
     <>
       <div className={`${montserrat.className}`}>
@@ -29,7 +29,7 @@ export default function Blogs({ repo }) {
           <title>Blogs</title>
         </Head>
         <Navbar />
-        <div  data-aos="fade-in" className='text-center text-3xl md:text-6xl  flex flex-col items-center justify-center'>
+        <div data-aos="fade-in" className='text-center text-3xl md:text-6xl  flex flex-col items-center justify-center'>
           <lottie-player
             id="firstLottie"
             autoplay
@@ -41,7 +41,8 @@ export default function Blogs({ repo }) {
           <p className='border-4 border-transparent border-b-yellow-300'>Some of my blogs</p>
         </div>
         <hr className='my-10' />
-        {blogdata && blogdata.map((item) => (
+        {!blogdata?<div className='my-3 justify-center flex flex-col items-center'><Image src="/images/loading.gif" height={100} width={100} className='md:w-44'></Image>
+        <p>Fetching Blogs...</p></div>:<div>{blogdata && blogdata.map((item) => (
           <section data-aos="fade-up" className="text-gray-600 my-28 body-font" key={item.slug}>
             <div className="container px-5 mx-auto">
               <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
@@ -61,7 +62,8 @@ export default function Blogs({ repo }) {
               </div>
             </div>
           </section>
-        ))}
+        ))}</div>}
+        
         <Footer />
       </div>
     </>

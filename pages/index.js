@@ -65,7 +65,7 @@ export default function Home() {
             <div data-aos="fade-up" className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-100 p-6 rounded-lg">
                 <img className="h-40 rounded w-full object-contain object-center mb-6" src="images/javascript-39397.png" alt="content" />
-                <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">Proficiency- Beginner</h3>
+                <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">Proficiency- Intermediate</h3>
                 <h2 className="text-lg text-gray-900 font-medium title-font mb-4">JAVASCRIPT</h2>
                 <p className="leading-relaxed text-base">JavaScript empowers interactive and dynamic web experiences, facilitating client-side scripting for functionalities like form validation, animations, and DOM manipulation.</p>
               </div>
@@ -76,6 +76,14 @@ export default function Home() {
                 <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">Proficiency- Intermediate</h3>
                 <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Web Security</h2>
                 <p className="leading-relaxed text-base">Web security is crucial for protecting user data and ensuring the integrity of web applications by implementing encryption, authentication, and secure coding practices.</p>
+              </div>
+            </div>
+            <div data-aos="fade-up" className="xl:w-1/4 md:w-1/2 p-4">
+              <div className="bg-gray-100 p-6 rounded-lg">
+                <img className="h-40 rounded w-full object-contain object-center mb-6" src="images/python.png" alt="content" />
+                <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">Proficiency- Intermediate</h3>
+                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Python</h2>
+                <p className="leading-relaxed text-base">Proficient in Python with a solid grasp of the fundamentals, including multithreading. Equipped to tackle a diverse range of projects with efficiency and effectiveness.</p>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ export default function Blog({ data }) {
 
   function createMarkup(c) {
     return { __html: c };
-  }
+  } 
 
   return (
     <>

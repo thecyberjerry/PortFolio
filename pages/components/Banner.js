@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Aos from "aos";
@@ -7,8 +7,12 @@ import Typewriter from 'typewriter-effect';
 import { Montserrat } from 'next/font/google'
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] })
 const Banner = () => {
+    const [toggleType, settoggleType] = useState(false)
     useEffect(() => {
         Aos.init();
+        if (typeof window !== "undefined") {
+            settoggleType(true)
+        }
     }, [])
 
     return (<>
@@ -19,13 +23,18 @@ const Banner = () => {
                 <section className="w-full bg-cover bg-center py-32" style={{ backgroundImage: "url('/images/yellowbanner.jpg')" }}>
                     <div className="container mx-auto text-center text-white">
                         <h1 className="text-5xl font-medium mb-6">Welcome to My Portfolio</h1>
-                        <p className="text-4xl leading-normal mb-12 text-black ">I am Himanshu A Frontend  <Typewriter
-                            options={{
-                                strings: ['Developer', 'Designer'],
-                                autoStart: true,
-                                loop: true,
-                            }}
-                        /> <i className="fa-solid fa-code"></i> <span>
+                        <p className="text-4xl leading-normal mb-12 text-black ">I am Himanshu A Frontend
+
+                            {toggleType ? <Typewriter
+                                options={{
+                                    strings: ['Developer', 'Designer'],
+                                    autoStart: true,
+                                    loop: true,
+                                }}
+                            /> : ""}
+                            
+
+                            <i className="fa-solid fa-code"></i> <span>
                             </span></p>
                         <Link href="/blogs" className="bg-black text-white py-4 px-12 rounded-full hover:bg-white hover:text-black  transition">View Blogs</Link>
                         <br />
