@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Head from 'next/head';
 import Aos from "aos";
+import Image from 'next/image';
 import 'aos/dist/aos.css'
 import { Montserrat } from 'next/font/google';
 import { useRouter } from 'next/router';
@@ -25,10 +26,11 @@ export default function Blog({ data }) {
   return (
     <>
       <Navbar />
-      <div data-aos="fade-up" className={`${montserrat.className}  flex text-left`}>
+      <div className={`${montserrat.className}  flex text-left  justify-center`}>
         <div >
-          {blog &&
-            <div >
+          {!blog ?
+             <div className='my-14  justify-center flex flex-col items-center'><Image src="/images/loading.gif" height={100} width={100} className='w-full'></Image>
+              <p>Fetching Blog...</p></div>:<div >
               <Head>
                 <title>{blog.title} | By {blog.author}</title>
               </Head>
