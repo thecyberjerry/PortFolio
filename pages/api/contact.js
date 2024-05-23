@@ -1,12 +1,16 @@
-import * as fs from 'fs';
-export default async function handler(req, res) {
-    // if (req.method == 'POST') {
-    //     let file = await fs.promises.readdir(`ContactsData/`)
-    //     await fs.promises.writeFile(`ContactsData/User${file.length + 1}.json`, req.body)
-    //     res.status(200).json({ status: "success" })
-    // }
-    // else {
+import Contact from "@/model/Contact";
+import connectDB from "../lib/connectDB"
 
-        res.status(200).json({ status: "This Endpoint is not supported please goto link provided here", url:"https://himanshu-folio.vercel.app/contact" });
-    // }
+export default async function handler(req, res) {
+    await connectDB()
+    const { name, phone, email, msg, subject } = JSON.parse(req.body);
+    const contact = new Contact({
+        name: name,
+        phone: phone,
+        email: email,
+        msg: msg,
+        subject: subject
+    })
+    await contact.save()
+    res.status(200).json({ status: true })
 }
