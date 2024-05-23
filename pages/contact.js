@@ -3,27 +3,11 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { Montserrat } from 'next/font/google'
 import Head from 'next/head'
-import { ToastContainer, toast, Bounce } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] })
 
 export default function Contact() {
-    const notify = () => toast.success('Message Sent', {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-    });
-    const ref = useRef(null);
-    // React.useEffect(() => {
-    //     import("@lottiefiles/lottie-player");
-    // });
-    // const [success, setsuccess] = useState(false)
     const [error, setError] = useState(false)
     const formRef = useRef(null);
     const submitform = async (e) => {
@@ -37,28 +21,25 @@ export default function Contact() {
                 phone: e.currentTarget.phone.value,
                 subject: e.currentTarget.subject.value
             }
-            if (data.phone.length != 10) {
+            if (data.phone.length !== 10) {
                 throw new Error("Invalid Phone Number")
             }
-            else
-            {
+            else {
                 setError(false)
             }
-            const response = await fetch('/api/contact',
+            const response = await toast.promise(
+                 fetch('/api/contact',
+                    {
+                        method: 'POST',
+                        body: JSON.stringify(data)
+                    }),
                 {
-                    method: 'POST',
-                    body: JSON.stringify(data)
-                })
+                    pending: 'Sending Message',
+                    success: 'Message sent 👌',
+                    error: 'Some error occured please try again... 🤯'
+                }
+            );
             const res = await response.json()
-            if (res.status == true) {
-                notify(message)
-                // formRef.current.classList.add('hidden')
-                // setsuccess(true)
-            }
-            // setTimeout((success) => {
-            //     formRef.current.classList.remove('hidden')
-            //     setsuccess(false)
-            // }, 5000)
             formRef.current.reset()
         }
         catch (err) {
@@ -82,10 +63,7 @@ export default function Contact() {
                         </div>
                         <div className="lg:w-1/2 md:w-2/3 mx-auto ">
                             <div className="flex flex-wrap -m-2  justify-center">
-                                {/* <div className='flex items-center justify-center '>
-                                    <p>Please fill out the contact information <a style={{color:"blue"}} target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLSdefewOBR_J8E8-YQimT68rXJ5y_xLHxmIQ0oDA7swGdmr0Kg/viewform'>here</a></p>
-                                </div> */}
-                                <form action="" className='flex w-full flex-wrap' onSubmit={submitform} ref={formRef}>
+                                <form action="" className=' flex w-full flex-wrap' onSubmit={submitform} ref={formRef}>
                                     <div className="p-2 w-1/2">
                                         <div className="relative">
                                             <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name<sup>*required</sup></label>
@@ -121,18 +99,6 @@ export default function Contact() {
                                         <button className="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Send</button>
                                     </div>
                                 </form>
-                                {/* <div className={`w-full flex-wrap flex-col flex items-center text-center justify-center  ${success ? 'flex' : 'hidden'}`}>
-                                    <lottie-player
-                                        id="firstLottie"
-                                        ref={ref}
-                                        autoplay
-                                        loop
-                                        mode="normal"
-                                        src="https://lottie.host/a3aa6781-bea9-4888-9121-8917a5f52cf7/59SuCtFxQl.json"
-                                        style={{ width: "300px", height: "300px" }}
-                                    ></lottie-player>
-                                    <p className='text-3xl font-bold'>Got It!👍Will Contact You Soon</p>
-                                </div> */}
                                 <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                                     <p className="leading-normal my-5 ">
                                         Follow Here:
