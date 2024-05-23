@@ -7,7 +7,7 @@ import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const montserrat = Montserrat({ weight: ['300'], subsets: ['latin'] })
 
-export default function contact() {
+export default function Contact() {
     const notify = () => toast.success('Message Sent', {
         position: "top-center",
         autoClose: 3000,
