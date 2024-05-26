@@ -22,13 +22,13 @@ export default function Contact() {
                 subject: e.currentTarget.subject.value
             }
             if (data.phone.length !== 10) {
-                throw new Error("Invalid Phone Number")
+                throw new Error("Phone Number must be 10 Digit")
             }
             else {
                 setError(false)
             }
             const response = await toast.promise(
-                 fetch('/api/contact',
+                fetch('/api/contact',
                     {
                         method: 'POST',
                         body: JSON.stringify(data)
@@ -43,7 +43,7 @@ export default function Contact() {
             formRef.current.reset()
         }
         catch (err) {
-            setError(true)
+            setError(err.message)
         }
     }
     return (
@@ -74,7 +74,7 @@ export default function Contact() {
                                         <div className="relative">
                                             <label htmlFor="phone" className="leading-7 text-sm text-gray-600">Phone<sup>*required</sup></label>
                                             <input required type="text" id="phone" name="phone" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-white focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
-                                            <p className="text-xs text-red-500">{error ? "Invalid Number" : ""}</p>
+                                            <p className="text-xs text-red-500">{error ? error : null}</p>
                                         </div>
                                     </div>
                                     <div className="p-2 w-1/2">
