@@ -27,7 +27,7 @@ export default function Home() {
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">TechStack I work on</h1>
               <div className="h-1 w-20 bg-yellow-500 rounded"></div>
             </div>
-            <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Proficient in HTML and CSS, with a strong command of Tailwind CSS for efficient styling. I possess intermediate skills in JavaScript and a basic understanding of Next.js for dynamic web development. Additionally, I have experience in penetration testing of web applications at an intermediate level, contributing to a well-rounded understanding of web security. Continuously honing my skills in this tech stack, I am committed to staying updated with the latest trends and advancements, ensuring my ability to deliver high-quality solutions in both frontend development and web security realms.</p>
+            <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Proficient in HTML and CSS, with a strong command of Tailwind CSS for efficient styling. I possess intermediate skills in JavaScript, Python and a basic understanding of Next.js for dynamic web development. Additionally, I have experience in penetration testing of web applications at an intermediate level, contributing to a well-rounded understanding of web security. Continuously honing my skills in this tech stack, I am committed to staying updated with the latest trends and advancements, ensuring my ability to deliver high-quality solutions in both frontend development and web security realms.</p>
           </div>
           <div className="flex flex-wrap -m-4">
             <div data-aos="fade-up" className="xl:w-1/4 md:w-1/2 p-4">
