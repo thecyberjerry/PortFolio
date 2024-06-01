@@ -21,8 +21,8 @@ export default function Contact() {
                 phone: e.currentTarget.phone.value,
                 subject: e.currentTarget.subject.value
             }
-            if (data.phone.length !== 10) {
-                throw new Error("Phone Number must be 10 Digit")
+            if (data.phone.length !== 10 || isNaN(data.phone)) {
+                throw new Error("Invalid Number")
             }
             else {
                 setError(false)
