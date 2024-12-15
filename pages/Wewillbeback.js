@@ -8,10 +8,10 @@ export default function Wewillbeback() {
           Hold tight! 🚧
         </h1>
         <p className="text-xl text-gray-700">
-          I'm currently doing some sugar-sweet updates and changes.
+          I&apos;m currently doing some sugar-sweet updates and changes.
         </p>
         <p className="text-md text-gray-500">
-          I'll be right back, making everything better!
+          I&apos;ll be right back, making everything better!
         </p>
         <div className="flex justify-center">
           <div className="w-12 h-12 border-4 border-t-4 border-indigo-600 rounded-full animate-spin"></div>
