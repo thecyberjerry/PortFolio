@@ -8,7 +8,7 @@ export default function Wewillbeback() {
           Hold tight! 🚧
         </h1>
         <p className="text-xl text-gray-700">
-          I&apos;m currently doing some sugar-sweet updates and changes.
+          I&apos;m currently doing some super sugar-sweet updates and changes.
         </p>
         <p className="text-md text-gray-500">
           I&apos;ll be right back, making everything better!
