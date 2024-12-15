@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
-import Wewillbeback from "./wewillbeback";
+import Rightback from "./components/Rightback";
 
 export default function App({ Component, pageProps }) {
   // return <Component {...pageProps} />;
-  return <Wewillbeback />;
+  return <Rightback />
 }

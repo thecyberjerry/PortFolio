@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Wewillbeback() {
+export default function Rightback() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
       <div className="max-w-lg text-center bg-white shadow-lg rounded-lg p-8 space-y-6">
