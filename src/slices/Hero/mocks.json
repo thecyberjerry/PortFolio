@@ -1,0 +1,59 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"hero_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+					"width": 4380,
+					"height": 2895
+				},
+				"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=946%2C0%2C2488%2C2895&w=550&h=640",
+				"width": 550,
+				"height": 640,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 946,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"greeting_text_hero_section": {
+				"__TYPE__": "FieldContent",
+				"value": "remarkable",
+				"type": "Text"
+			},
+			"introduction_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Depend"
+						}
+					}
+				]
+			},
+			"hero_section_secondary_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim nulla nulla eiusmod eiusmod dolor eu amet adipisicing. Nulla aliqua reprehenderit non veniam reprehenderit veniam aliqua commodo labore ea."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
