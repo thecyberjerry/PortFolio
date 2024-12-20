@@ -24,8 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      {/* <head><script src="https://cdn.tailwindcss.com"></script></head> */}
+      <body className={`${rubikSans.variable} ${ubuntuSans.variable}`}>
+        <div className="container mx-auto p-2">{children}</div>
       </body>
     </html>
   );

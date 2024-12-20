@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = NavbarSlice | HeroSlice;
+type HomeDocumentDataSlicesSlice = HeroSlice | SocialsSlice | NavbarSlice;
 
 /**
  * Content for Home documents
@@ -70,65 +70,135 @@ export type AllDocumentTypes = HomeDocument;
 /**
  * Primary content in *Hero → Default → Primary*
  */
-export interface HeroSliceDefaultPrimary {
+export interface HeroSliceSocialsPrimary {
   /**
    * Greeting text hero section field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.greeting_text_hero_section
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: hero.socials.primary.greeting_text_hero_section
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  greeting_text_hero_section: prismic.KeyTextField;
+  greeting_text_hero_section: prismic.RichTextField;
+
+  /**
+   * greeting_text_font field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: hero.socials.primary.greeting_text_font
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  greeting_text_font: prismic.SelectField<
+    "font-rubik" | "font-ubuntu",
+    "filled"
+  >;
 
   /**
    * Introduction text field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.introduction_text
+   * - **API ID Path**: hero.socials.primary.introduction_text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   introduction_text: prismic.RichTextField;
+
+  /**
+   * Name field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.socials.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.TitleField;
+
+  /**
+   * Name Font Weight field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-thin
+   * - **API ID Path**: hero.socials.primary.name_font_weight
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  name_font_weight: prismic.SelectField<
+    | "font-thin"
+    | "font-extralight"
+    | "font-light"
+    | "font-normal"
+    | "font-medium"
+    | "font-semibold"
+    | "font-bold"
+    | "font-extrabold"
+    | "font-black",
+    "filled"
+  >;
 
   /**
    * Hero section secondary text field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hero_section_secondary_text
+   * - **API ID Path**: hero.socials.primary.hero_section_secondary_text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   hero_section_secondary_text: prismic.RichTextField;
+
+  /**
+   * Hero section secondary sub text field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.socials.primary.hero_section_secondary_sub_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  hero_section_secondary_sub_text: prismic.RichTextField;
 
   /**
    * Hero image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.hero_image
+   * - **API ID Path**: hero.socials.primary.hero_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   hero_image: prismic.ImageField<never>;
+
+  /**
+   * Hero section text font field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: hero.socials.primary.hero_section_text_font
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  hero_section_text_font: prismic.SelectField<
+    "font-rubik" | "font-ubuntu",
+    "filled"
+  >;
 }
 
 /**
  * Default variation for Hero Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `socials`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeroSliceDefaultPrimary>,
+export type HeroSliceSocials = prismic.SharedSliceVariation<
+  "socials",
+  Simplify<HeroSliceSocialsPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault;
+type HeroSliceVariation = HeroSliceSocials;
 
 /**
  * Hero Shared Slice
@@ -211,6 +281,78 @@ type NavbarSliceVariation = NavbarSliceDefault;
  */
 export type NavbarSlice = prismic.SharedSlice<"navbar", NavbarSliceVariation>;
 
+/**
+ * Item in *Socials → Default → Primary → Social Link*
+ */
+export interface SocialsSliceDefaultPrimarySocialLinkItem {
+  /**
+   * Social Image field in *Socials → Default → Primary → Social Link*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social_link[].social_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  social_image: prismic.ImageField<never>;
+
+  /**
+   * Social Link field in *Socials → Default → Primary → Social Link*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social_link[].social_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  social_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Socials → Default → Primary*
+ */
+export interface SocialsSliceDefaultPrimary {
+  /**
+   * Social Link field in *Socials → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social_link[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social_link: prismic.GroupField<
+    Simplify<SocialsSliceDefaultPrimarySocialLinkItem>
+  >;
+}
+
+/**
+ * Default variation for Socials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SocialsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Socials*
+ */
+type SocialsSliceVariation = SocialsSliceDefault;
+
+/**
+ * Socials Shared Slice
+ *
+ * - **API ID**: `socials`
+ * - **Description**: Socials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSlice = prismic.SharedSlice<
+  "socials",
+  SocialsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -237,13 +379,18 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
       HeroSlice,
-      HeroSliceDefaultPrimary,
+      HeroSliceSocialsPrimary,
       HeroSliceVariation,
-      HeroSliceDefault,
+      HeroSliceSocials,
       NavbarSlice,
       NavbarSliceDefaultPrimary,
       NavbarSliceVariation,
       NavbarSliceDefault,
+      SocialsSlice,
+      SocialsSliceDefaultPrimarySocialLinkItem,
+      SocialsSliceDefaultPrimary,
+      SocialsSliceVariation,
+      SocialsSliceDefault,
     };
   }
 }

@@ -1,7 +1,7 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-
+import type { JSX } from "react";
 /**
  * Props for `Navbar`.
  */
@@ -15,14 +15,19 @@ const Navbar = ({ slice }: NavbarProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="container">
-      <div className="border-4 flex px-10 border-red-500">
-        <PrismicNextImage field={slice.primary.logo} />
-        <PrismicNextImage field={slice.primary.search} />
-        {slice.primary.header_menu_toggle_title}
-        <PrismicNextImage
+      className="flex justify-between items-center"
+    >
+      {slice?.primary && <PrismicNextImage field={slice.primary.logo} />}
+      <div className="hidden sm:block">
+        {slice?.primary && <PrismicNextImage field={slice.primary.search} />}
+      </div>
+      <div className="flex gap-4 font-ubuntu">
+        <div className="hidden sm:block">
+          {slice?.primary?.header_menu_toggle_title && slice.primary.header_menu_toggle_title}
+        </div>
+        {slice?.primary?.header_menu_toggle_icon && <PrismicNextImage
           field={slice.primary.header_menu_toggle_icon}
-        />
+        />}
       </div>
     </section>
   );

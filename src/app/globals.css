@@ -2,22 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Reset margin and padding for headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-0; /* Remove any default margin */
+  }
+
+  /* Apply Tailwind typography classes */
+  h1 {
+    @apply text-3xl md:text-6xl; /* Adjust size and boldness */
+  }
+
+  h2 {
+    @apply text-2xl md:text-4xl; /* Slightly smaller than h1 */
+  }
+
+  h3 {
+    @apply text-2xl; /* Adjust size for h3 */
+  }
+
+  h4 {
+    @apply text-xl; /* Adjust size for h4 */
+  }
+
+  h5 {
+    @apply text-lg; /* Adjust size for h5 */
+  }
+
+  h6 {
+    @apply text-base; /* Adjust size for h6 */
+  }
+}
 :root {
   --primary-color: #333333;
   --secondary-color: #ffffff;
   --tertiary-color: #d6d6d6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #333333;
-    --secondary-color: #ffffff;
-    --tertiary-color: #d6d6d6;
-  }
+.font-rubik {
+  font-family: var(--font-family-rubik);
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.font-ubuntu {
+  font-family: var(--font-family-ubuntu);
 }

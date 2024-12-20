@@ -5,7 +5,7 @@
   "description": "Hero",
   "variations": [
     {
-      "id": "default",
+      "id": "socials",
       "name": "Default",
       "docURL": "...",
       "version": "initial",
@@ -13,10 +13,24 @@
       "imageUrl": "",
       "primary": {
         "greeting_text_hero_section": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Greeting text hero section",
-            "placeholder": ""
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph,heading3,heading4,heading5,heading6,strong,em"
+          }
+        },
+        "greeting_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
           }
         },
         "introduction_text": {
@@ -28,13 +42,50 @@
             "single": "heading1,heading2,heading3,strong"
           }
         },
+        "name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Name",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading1,heading2,heading3,heading4,heading5,heading6"
+          }
+        },
+        "name_font_weight": {
+          "type": "Select",
+          "config": {
+            "label": "Name Font Weight",
+            "placeholder": "",
+            "options": [
+              "font-thin",
+              "font-extralight",
+              "font-light",
+              "font-normal",
+              "font-medium",
+              "font-semibold",
+              "font-bold",
+              "font-extrabold",
+              "font-black"
+            ],
+            "default_value": "font-thin"
+          }
+        },
         "hero_section_secondary_text": {
           "type": "StructuredText",
           "config": {
             "label": "Hero section secondary text",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "heading4,heading5,heading6,strong,em,paragraph"
+            "multi": "paragraph,heading4,heading5,heading6,strong,em,heading3,heading2"
+          }
+        },
+        "hero_section_secondary_sub_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero section secondary sub text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,heading5,heading6,strong,em"
           }
         },
         "hero_image": {
@@ -46,6 +97,18 @@
               "height": 640
             },
             "thumbnails": []
+          }
+        },
+        "hero_section_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "Hero section text font",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
           }
         }
       },
