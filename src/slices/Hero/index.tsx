@@ -16,7 +16,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex justify-between mt-10 md:mt-20 flex-col md:flex-row gap-2 md:gap-0"
+      className="flex justify-between mt-10 md:mt-32 flex-col md:flex-row gap-2 md:gap-0"
     >
       <aside className="flex gap-4 flex-col w-full text-primary justify-center">
         {slice.primary.greeting_text_font && <div className={slice.primary.greeting_text_font}>

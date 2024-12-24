@@ -1,0 +1,71 @@
+{
+  "id": "statistics",
+  "type": "SharedSlice",
+  "name": "Statistics",
+  "description": "Statistics",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "stats": {
+          "type": "Group",
+          "config": {
+            "label": "Stats",
+            "repeat": true,
+            "fields": {
+              "numbers": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Numbers",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "statistics_font_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Statistics Font Colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        },
+        "statistics_font_family": {
+          "type": "Select",
+          "config": {
+            "label": "Statistics Font Family",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

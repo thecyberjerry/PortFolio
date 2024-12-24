@@ -50,3 +50,17 @@
 .font-ubuntu {
   font-family: var(--font-family-ubuntu);
 }
+
+.slick-slide > div {
+  margin: 0px 10px 0px 10px !important;
+}
+.slick-arrow::before {
+  color: var(--primary-color);
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 550px) {
+  .slick-arrow {
+    display: none !important;
+  }
+}

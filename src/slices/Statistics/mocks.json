@@ -1,0 +1,57 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"stats": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"numbers",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Cupidatat velit commodo nostrud reprehenderit elit id fugiat sunt ad sit quis. Exercitation dolor esse ad. Qui aute ea tempor est laboris aute anim laboris."
+											}
+										}
+									]
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Qui aliquip excepteur tempor sit excepteur enim."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"statistics_font_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "text-primary",
+				"type": "Select"
+			},
+			"statistics_font_family": {
+				"__TYPE__": "FieldContent",
+				"value": "font-ubuntu",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

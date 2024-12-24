@@ -15,15 +15,18 @@
     "@prismicio/react": "^2.9.1",
     "next": "15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "^0.3.60",
+    "@slicemachine/adapter-next": "^0.3.61",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-slick": "^0.23.13",
     "postcss": "^8",
-    "slice-machine-ui": "^2.11.0",
+    "slice-machine-ui": "^2.11.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

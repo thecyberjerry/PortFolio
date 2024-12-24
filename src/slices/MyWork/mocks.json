@@ -1,0 +1,123 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Fireplace"
+						}
+					}
+				]
+			},
+			"work_card": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"card_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Excepteur et quis pariatur duis laboris in id sunt aute aute cillum mollit laboris voluptate amet. Ullamco tempor ad pariatur eiusmod. Anim magna magna nostrud excepteur culpa ad."
+											}
+										}
+									]
+								}
+							],
+							[
+								"work_sub_description",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "effort",
+									"type": "Text"
+								}
+							],
+							[
+								"read_more_button",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "especially",
+									"type": "Text"
+								}
+							],
+							[
+								"redirect_icon",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+										"width": 4016,
+										"height": 6016
+									},
+									"url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+									"width": 4016,
+									"height": 6016,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"blog_link",
+								{
+									"key": "ab4e68d4-894c-468e-b240-ea350ff78db3",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io",
+										"text": "flat"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"card_font": {
+				"__TYPE__": "FieldContent",
+				"value": "font-rubik",
+				"type": "Select"
+			},
+			"blog_card_background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "hover:bg-primary",
+				"type": "Select"
+			},
+			"blog_card_background_color_static": {
+				"__TYPE__": "FieldContent",
+				"value": "bg-secondary",
+				"type": "Select"
+			},
+			"font_color_onhover": {
+				"__TYPE__": "FieldContent",
+				"value": "hover:text-tertiary",
+				"type": "Select"
+			},
+			"font_color_static": {
+				"__TYPE__": "FieldContent",
+				"value": "text-primary",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

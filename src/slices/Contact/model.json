@@ -1,0 +1,148 @@
+{
+  "id": "contact",
+  "type": "SharedSlice",
+  "name": "Contact",
+  "description": "Contact",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "sub_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Button Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Button Background Colour",
+            "placeholder": "",
+            "options": [
+              "bg-primary",
+              "bg-secondary",
+              "bg-tertiary"
+            ],
+            "default_value": "bg-primary"
+          }
+        },
+        "button_text_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Button Text Colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        },
+        "button_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "Button Text Font",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        },
+        "contact_section_font": {
+          "type": "Select",
+          "config": {
+            "label": "Contact Section Font",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        },
+        "background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Background Colour",
+            "placeholder": "",
+            "options": [
+              "bg-primary",
+              "bg-secondary",
+              "bg-tertiary"
+            ],
+            "default_value": "bg-primary"
+          }
+        },
+        "socials": {
+          "type": "Group",
+          "config": {
+            "label": "Socials",
+            "repeat": true,
+            "fields": {
+              "social_icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Social Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "social_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Social Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        },
+        "contact_us_font_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Contact Us font colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "my_work",
+  "type": "SharedSlice",
+  "name": "MyWork",
+  "description": "MyWork",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading5,heading4,heading3,heading2,em,strong"
+          }
+        },
+        "work_card": {
+          "type": "Group",
+          "config": {
+            "label": "Work Card",
+            "repeat": true,
+            "fields": {
+              "card_title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Card title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3,heading2,heading4,em,strong,embed,rtl,paragraph"
+                }
+              },
+              "work_sub_description": {
+                "type": "Text",
+                "config": {
+                  "label": "Work sub description",
+                  "placeholder": ""
+                }
+              },
+              "read_more_button": {
+                "type": "Text",
+                "config": {
+                  "label": "Read More button",
+                  "placeholder": ""
+                }
+              },
+              "redirect_icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Redirect icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "blog_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Blog Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        },
+        "blog_card_background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Blog Card Background Color",
+            "placeholder": "On Hover Background Color",
+            "options": [
+              "hover:bg-primary",
+              "hover:bg-secondary",
+              "hover:bg-tertiary"
+            ],
+            "default_value": "hover:bg-primary"
+          }
+        },
+        "blog_card_background_color_static": {
+          "type": "Select",
+          "config": {
+            "label": "Blog Card Background Color Static",
+            "placeholder": "Static Color",
+            "options": [
+              "bg-secondary",
+              "bg-primary",
+              "bg-tertiary"
+            ],
+            "default_value": "bg-secondary"
+          }
+        },
+        "card_font": {
+          "type": "Select",
+          "config": {
+            "label": "Card Font",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        },
+        "font_color_onhover": {
+          "type": "Select",
+          "config": {
+            "label": "Font color Onhover",
+            "placeholder": "On Mouse Hover",
+            "options": [
+              "hover:text-primary",
+              "hover:text-secondary",
+              "hover:text-tertiary"
+            ],
+            "default_value": "hover:text-primary"
+          }
+        },
+        "font_color_static": {
+          "type": "Select",
+          "config": {
+            "label": "Font color Static",
+            "placeholder": "Static Color",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

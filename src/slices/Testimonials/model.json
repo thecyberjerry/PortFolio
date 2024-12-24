@@ -1,0 +1,113 @@
+{
+  "id": "testimonials",
+  "type": "SharedSlice",
+  "name": "Testimonials",
+  "description": "Testimonials",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,em,strong"
+          }
+        },
+        "testimonial_quote": {
+          "type": "Image",
+          "config": {
+            "label": "Testimonial Quote",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "testimonial_card": {
+          "type": "Group",
+          "config": {
+            "label": "Testimonial card",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "testimonial_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Testimonial Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "name": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Name",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "desgination": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Desgination",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "reverse": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Reverse",
+                  "placeholder_false": "LTR",
+                  "placeholder_true": "RTL",
+                  "default_value": false
+                }
+              }
+            }
+          }
+        },
+        "testimonial_fonts": {
+          "type": "Select",
+          "config": {
+            "label": "Testimonial Fonts",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        },
+        "testimonial_font_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Testimonial Font Colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary"
+            ],
+            "default_value": "text-primary"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
