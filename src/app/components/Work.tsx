@@ -33,7 +33,6 @@ export default function Work({ slice }: Work): JSX.Element {
   return (
     <React.Fragment>
       <div className="mx-auto"><PrismicRichText field={slice.primary.heading} /></div>
-      {/* <div className={`grid mx-auto md:grid-cols-3 gap-2 `}> */}
       <div className="slider-container">
         <Slider {...settings}>
           {slice.primary.work_card.map((item, index: number) => (
@@ -48,7 +47,6 @@ export default function Work({ slice }: Work): JSX.Element {
           ))}
         </Slider>
       </div>
-      {/* </div> */}
     </React.Fragment>
   )
 }

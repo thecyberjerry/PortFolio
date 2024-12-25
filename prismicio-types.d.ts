@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | BlogcardsSlice
   | StatisticsSlice
   | ContactSlice
   | TestimonialsSlice
@@ -73,6 +74,110 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
+
+/**
+ * Primary content in *Blogcards → Default → Primary*
+ */
+export interface BlogcardsSliceDefaultPrimary {
+  /**
+   * Title field in *Blogcards → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Font Family field in *Blogcards → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: blogcards.default.primary.font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
+
+  /**
+   * Blog Card Background Colour field in *Blogcards → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: bg-primary
+   * - **API ID Path**: blogcards.default.primary.blog_card_background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  blog_card_background_colour: prismic.SelectField<
+    "bg-primary" | "bg-secondary" | "bg-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Font Colour field in *Blogcards → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text-primary
+   * - **API ID Path**: blogcards.default.primary.font_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_colour: prismic.SelectField<
+    "text-primary" | "text-secondary" | "text-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Read More Button Text field in *Blogcards → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.default.primary.read_more_button_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  read_more_button_text: prismic.RichTextField;
+
+  /**
+   * Read More Button Redirect Icon field in *Blogcards → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.default.primary.read_more_button_redirect_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  read_more_button_redirect_icon: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Blogcards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogcardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogcardsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Blogcards*
+ */
+type BlogcardsSliceVariation = BlogcardsSliceDefault;
+
+/**
+ * Blogcards Shared Slice
+ *
+ * - **API ID**: `blogcards`
+ * - **Description**: Blogcards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogcardsSlice = prismic.SharedSlice<
+  "blogcards",
+  BlogcardsSliceVariation
+>;
 
 /**
  * Item in *Contact → Default → Primary → Socials*
@@ -1073,6 +1178,10 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BlogcardsSlice,
+      BlogcardsSliceDefaultPrimary,
+      BlogcardsSliceVariation,
+      BlogcardsSliceDefault,
       ContactSlice,
       ContactSliceDefaultPrimarySocialsItem,
       ContactSliceDefaultPrimary,
