@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "footer": {
+              "type": "SharedSlice"
+            },
+            "portofolio": {
+              "type": "SharedSlice"
+            },
             "blogcards": {
               "type": "SharedSlice"
             },

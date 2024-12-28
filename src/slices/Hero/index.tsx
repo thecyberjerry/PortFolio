@@ -16,7 +16,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex justify-between mt-10 md:mt-32 flex-col md:flex-row gap-2 md:gap-0"
+      className="flex justify-between mt-10 md:mt-32  flex-col md:flex-row gap-2 md:gap-0"
     >
       <aside className="flex gap-4 flex-col w-full text-primary justify-center">
         {slice.primary.greeting_text_font && <div className={slice.primary.greeting_text_font}>
@@ -24,7 +24,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>}
         <div className={`flex flex-col gap-4 ${slice.primary.hero_section_text_font}`}>
           <div className="flex gap-2 md:gap-3">
-            <PrismicRichText field={slice.primary.introduction_text} /><span className={slice.primary.name_font_weight}><PrismicRichText field={slice.primary.name} /></span>
+            <PrismicRichText field={slice.primary.introduction_text} /><span className={` ${slice.primary.name_font_weight}`}><PrismicRichText field={slice.primary.name} /></span>
           </div>
           <PrismicRichText
             field={slice.primary.hero_section_secondary_text}

@@ -63,6 +63,16 @@
 						]
 					}
 				]
+			},
+			"font_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "text-primary",
+				"type": "Select"
+			},
+			"font_family": {
+				"__TYPE__": "FieldContent",
+				"value": "font-rubik",
+				"type": "Select"
 			}
 		},
 		"items": []

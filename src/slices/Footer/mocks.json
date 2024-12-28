@@ -1,0 +1,106 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat laboris ad voluptate duis amet ullamco cillum. Cupidatat ea incididunt ipsum Lorem nostrud. Pariatur fugiat ut minim id pariatur laboris deserunt ea ut mollit cupidatat eiusmod culpa."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Et laboris excepteur ipsum mollit dolore irure quis commodo ullamco officia aliquip voluptate veniam esse."
+						}
+					}
+				]
+			},
+			"location_information": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"location",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Exercitation consequat tempor consectetur et do cupidatat dolore aute aliqua dolore id veniam. Magna do veniam excepteur consequat. Enim non ad nulla cupidatat."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"font_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "text-primary",
+				"type": "Select"
+			},
+			"font_family": {
+				"__TYPE__": "FieldContent",
+				"value": "font-rubik",
+				"type": "Select"
+			},
+			"form_background_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "bg-tertiary",
+				"type": "Select"
+			},
+			"form_font_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "text-primary",
+				"type": "Select"
+			},
+			"button_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex sit eu exercitation aliqua ex tempor nisi aliquip culpa in mollit. Laboris proident reprehenderit do tempor in ex veniam."
+						}
+					}
+				]
+			},
+			"button_font_family": {
+				"__TYPE__": "FieldContent",
+				"value": "font-rubik",
+				"type": "Select"
+			},
+			"button_font_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "text-primary",
+				"type": "Select"
+			},
+			"button_background_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "bg-primary",
+				"type": "Select"
+			},
+			"font_weight": {
+				"__TYPE__": "FieldContent",
+				"value": "font-bold",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

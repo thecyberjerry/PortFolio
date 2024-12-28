@@ -16,7 +16,7 @@ const MyWork = ({ slice, index, slices, context }: MyWorkProps): JSX.Element => 
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`${slice.primary.card_font} mt-32 flex flex-col gap-10`}
+      className={`${slice.primary.card_font} mt-20 md:mt-32  flex flex-col gap-10`}
     >
       {slice && <Work slice={slice}/>}
     </section>

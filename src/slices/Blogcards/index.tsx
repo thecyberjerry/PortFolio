@@ -16,7 +16,7 @@ const Blogcards = ({ slice }: BlogcardsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`${slice.primary.font_family} mt-32 items-center flex flex-col gap-10`}
+      className={`${slice.primary.font_family} mt-20 md:mt-32  items-center flex flex-col gap-10`}
     >
       <PrismicRichText field={slice.primary.title} />
       <Blogcard bgcolor={slice.primary.blog_card_background_colour} fontfamily={slice.primary.font_family} textcolor={slice.primary.font_colour} />

@@ -16,13 +16,13 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`${slice.primary.testimonial_fonts} ${slice.primary.testimonial_font_colour} mt-32 flex flex-col gap-10`}
+      className={`${slice.primary.testimonial_fonts} ${slice.primary.testimonial_font_colour} mt-20 md:mt-32  flex flex-col gap-10`}
     >
       <div className="mx-auto"><PrismicRichText field={slice.primary.title} /></div>
       {slice.primary.testimonial_card.map((item, index: number) => (
         // Render the item
         <div className={`flex gap-10 md:flex-row flex-col ${item.reverse && "flex-row-reverse"}`} key={index}>
-          <div className="w-[100%] md:w-[40%]"><PrismicNextImage field={item.image} /></div>
+          <div className="w-[100%] sm:mx-auto sm:w-[50%] md:w-[40%]"><PrismicNextImage field={item.image} /></div>
           <div className="w-full m-auto">
             <div className="w-[10%] md:w-10"><PrismicNextImage field={slice.primary.testimonial_quote} /></div>
             <PrismicRichText field={item.testimonial_description} />

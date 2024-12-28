@@ -1,0 +1,172 @@
+{
+  "id": "footer",
+  "type": "SharedSlice",
+  "name": "Footer",
+  "description": "Footer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "location_information": {
+          "type": "Group",
+          "config": {
+            "label": "Location Information",
+            "repeat": true,
+            "fields": {
+              "location": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "location",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "font_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Font Colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        },
+        "font_family": {
+          "type": "Select",
+          "config": {
+            "label": "Font Family",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        },
+        "form_background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Form Background Colour",
+            "placeholder": "",
+            "options": [
+              "bg-primary",
+              "bg-secondary",
+              "bg-tertiary"
+            ],
+            "default_value": "bg-primary"
+          }
+        },
+        "form_font_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Form Font Colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        },
+        "button_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Button Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_font_family": {
+          "type": "Select",
+          "config": {
+            "label": "Button Font Family",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        },
+        "button_font_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Button Font Colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        },
+        "button_background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Button Background Colour",
+            "placeholder": "",
+            "options": [
+              "bg-primary",
+              "bg-secondary",
+              "bg-tertiary"
+            ],
+            "default_value": "bg-primary"
+          }
+        },
+        "font_weight": {
+          "type": "Select",
+          "config": {
+            "label": "Font Weight",
+            "placeholder": "",
+            "options": [
+              "font-bold",
+              "font-thin",
+              "font-extralight",
+              "font-light",
+              "font-normal",
+              "font-medium",
+              "font-semibold",
+              "font-extrabold",
+              "font-black"
+            ],
+            "default_value": "font-bold"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

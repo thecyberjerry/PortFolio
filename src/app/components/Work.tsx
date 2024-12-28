@@ -14,7 +14,7 @@ export default function Work({ slice }: Work): JSX.Element {
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -41,7 +41,7 @@ export default function Work({ slice }: Work): JSX.Element {
                 <PrismicRichText field={item.card_title} />
                 <span>{item.work_sub_description}</span>
               </div>
-              <div className="flex mt-32 justify-between">{item.read_more_button}<PrismicNextImage field={item.redirect_icon} /></div>
+              <div className="flex mt-20 md:mt-32  justify-between">{item.read_more_button}<PrismicNextImage field={item.redirect_icon} /></div>
               {/* <PrismicNextLink field={item.blog_link} /> */}
             </div>
           ))}

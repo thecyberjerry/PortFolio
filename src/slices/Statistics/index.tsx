@@ -15,7 +15,7 @@ const Statistics = ({ slice }: StatisticsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mt-32 items-center flex flex-col gap-10"
+      className="mt-20 md:mt-32  items-center flex flex-col gap-10"
     >
       <div className="flex flex-col items-center gap-10 text-center md:gap-0 md:flex-row md:justify-evenly w-full">
         {slice.primary.stats.map((item, index: number) => (

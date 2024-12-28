@@ -4,7 +4,43 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type FooterDocumentDataSlicesSlice = FooterSlice;
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Slice Zone field in *Footer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
 type HomeDocumentDataSlicesSlice =
+  | FooterSlice
+  | PortofolioSlice
   | BlogcardsSlice
   | StatisticsSlice
   | ContactSlice
@@ -73,7 +109,7 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+export type AllDocumentTypes = FooterDocument | HomeDocument;
 
 /**
  * Primary content in *Blogcards → Default → Primary*
@@ -359,6 +395,212 @@ export type ContactSlice = prismic.SharedSlice<
   "contact",
   ContactSliceVariation
 >;
+
+/**
+ * Item in *Footer → Default → Primary → Location Information*
+ */
+export interface FooterSliceDefaultPrimaryLocationInformationItem {
+  /**
+   * location field in *Footer → Default → Primary → Location Information*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.location_information[].location
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  location: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Footer → Default → Primary*
+ */
+export interface FooterSliceDefaultPrimary {
+  /**
+   * Title field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Location Information field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.location_information[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  location_information: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimaryLocationInformationItem>
+  >;
+
+  /**
+   * Font Colour field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text-primary
+   * - **API ID Path**: footer.default.primary.font_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_colour: prismic.SelectField<
+    "text-primary" | "text-secondary" | "text-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Font Family field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: footer.default.primary.font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
+
+  /**
+   * Form Background Colour field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: bg-primary
+   * - **API ID Path**: footer.default.primary.form_background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  form_background_colour: prismic.SelectField<
+    "bg-primary" | "bg-secondary" | "bg-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Form Font Colour field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text-primary
+   * - **API ID Path**: footer.default.primary.form_font_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  form_font_colour: prismic.SelectField<
+    "text-primary" | "text-secondary" | "text-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Button Text field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  button_text: prismic.RichTextField;
+
+  /**
+   * Button Font Family field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: footer.default.primary.button_font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_font_family: prismic.SelectField<
+    "font-rubik" | "font-ubuntu",
+    "filled"
+  >;
+
+  /**
+   * Button Font Colour field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text-primary
+   * - **API ID Path**: footer.default.primary.button_font_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_font_colour: prismic.SelectField<
+    "text-primary" | "text-secondary" | "text-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Button Background Colour field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: bg-primary
+   * - **API ID Path**: footer.default.primary.button_background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_background_colour: prismic.SelectField<
+    "bg-primary" | "bg-secondary" | "bg-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Font Weight field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-bold
+   * - **API ID Path**: footer.default.primary.font_weight
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_weight: prismic.SelectField<
+    | "font-bold"
+    | "font-thin"
+    | "font-extralight"
+    | "font-light"
+    | "font-normal"
+    | "font-medium"
+    | "font-semibold"
+    | "font-extrabold"
+    | "font-black",
+    "filled"
+  >;
+}
+
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: Footer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -800,6 +1042,31 @@ export interface PortofolioSliceDefaultPrimary {
   image_gallery: prismic.GroupField<
     Simplify<PortofolioSliceDefaultPrimaryImageGalleryItem>
   >;
+
+  /**
+   * Font Colour field in *Portfolio → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text-primary
+   * - **API ID Path**: portofolio.default.primary.font_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_colour: prismic.SelectField<
+    "text-primary" | "text-secondary" | "text-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Font Family field in *Portfolio → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: portofolio.default.primary.font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
 }
 
 /**
@@ -1174,6 +1441,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -1187,6 +1457,11 @@ declare module "@prismicio/client" {
       ContactSliceDefaultPrimary,
       ContactSliceVariation,
       ContactSliceDefault,
+      FooterSlice,
+      FooterSliceDefaultPrimaryLocationInformationItem,
+      FooterSliceDefaultPrimary,
+      FooterSliceVariation,
+      FooterSliceDefault,
       HeroSlice,
       HeroSliceSocialsPrimary,
       HeroSliceVariation,

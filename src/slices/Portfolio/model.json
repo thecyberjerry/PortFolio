@@ -46,6 +46,31 @@
               }
             }
           }
+        },
+        "font_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Font Colour",
+            "placeholder": "",
+            "options": [
+              "text-primary",
+              "text-secondary",
+              "text-tertiary"
+            ],
+            "default_value": "text-primary"
+          }
+        },
+        "font_family": {
+          "type": "Select",
+          "config": {
+            "label": "Font Family",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
         }
       },
       "items": {}

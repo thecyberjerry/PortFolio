@@ -44,6 +44,9 @@ export default {
         secondary: "var(--secondary-color)",
         tertiary: "var(--tertiary-color)",
       },
+      aspectRatio:{
+        "3/2":"3/2",
+      }
     },
   },
   plugins: [],

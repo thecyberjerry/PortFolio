@@ -18,7 +18,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`mt-32 py-20 items-center flex flex-col gap-10 ${slice.primary.contact_section_font} ${slice.primary.background_colour} ${slice.primary.contact_us_font_colour}`}
+      className={`mt-20 md:mt-32 py-20 items-center flex flex-col gap-10 ${slice.primary.contact_section_font} ${slice.primary.background_colour} ${slice.primary.contact_us_font_colour}`}
     >
       <div className="flex flex-col gap-4 text-center">
         <h5>{slice.primary.title}</h5>
