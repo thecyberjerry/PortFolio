@@ -65,5 +65,111 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withDisplayImage",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sint Lorem excepteur non aute non. Eu consectetur nisi adipisicing proident dolore mollit commodo. Enim est esse ex amet aliqua minim cillum amet eu."
+						}
+					}
+				]
+			},
+			"font_family": {
+				"__TYPE__": "FieldContent",
+				"value": "font-ubuntu",
+				"type": "Select"
+			},
+			"blog_card_background_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "bg-tertiary",
+				"type": "Select"
+			},
+			"font_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "text-primary",
+				"type": "Select"
+			},
+			"read_more_button_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim nostrud qui non voluptate ad nostrud aute. Nisi laborum est mollit qui nisi laborum."
+						}
+					}
+				]
+			},
+			"read_more_button_redirect_icon": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+				"width": 4000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+					"width": 5616,
+					"height": 3744
+				},
+				"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+				"width": 5616,
+				"height": 3744,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"tag": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor nisi do commodo irure ullamco cillum cillum mollit nisi adipisicing commodo."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

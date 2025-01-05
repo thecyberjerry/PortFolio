@@ -29,12 +29,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const client = createClient();
-  const page = await client.getSingle("footer");
+  const navbar = await client.getSingle("navbar");
+  const footer = await client.getSingle("footer");
   return (
     <html lang="en">
       <body className={`${rubikSans.variable} ${ubuntuSans.variable} container mx-auto p-2`}>
+        <SliceZone slices={navbar.data.slices} components={components} /> {/* NAVBAR HERE*/}
         <div>{children}</div>
-        <SliceZone slices={page.data.slices} components={components} /> {/* FOOTER HERE*/}
+        <SliceZone slices={footer.data.slices} components={components} /> {/* FOOTER HERE*/}
       </body>
     </html>
   );

@@ -34,7 +34,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           />
         </div>
       </aside>
-      <aside className="w-full flex justify-center md:justify-end"><PrismicNextImage field={slice.primary.hero_image} /></aside>
+      <aside className="w-1/2 hidden lg:w-full  md:flex justify-center md:justify-end"><PrismicNextImage field={slice.primary.hero_image} /></aside>
     </section>
   );
 };

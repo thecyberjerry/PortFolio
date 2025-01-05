@@ -1,56 +1,41 @@
-import Image from 'next/image'
+"use client"
+import { PrismicNextImage } from '@prismicio/next'
+import { asText } from '@prismicio/helpers'
 import React, { JSX } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
-export type Blogcard = {
-    fontfamily: string,
-    bgcolor: string,
-    textcolor: string
+export type CustomBlogcard = {
+    fontfamily?: string,
+    bgcolor?: string,
+    textcolor?: string,
+    url?: string,
+    children?: any
 }
-export default function Blogcard({ fontfamily, bgcolor, textcolor }: Blogcard): JSX.Element {
+export default function Blogcard({ fontfamily, bgcolor, textcolor, children, url }: CustomBlogcard): JSX.Element {
+    const router = useRouter()
     return (
-        <div className={`grid md:grid-cols-3 gap-6 ${textcolor} ${fontfamily}`}>
-            <div>
-                <div className="aspect-3/2 [&>img]:object-cover [&>img]:object-top [&>img]:w-full [&>img]:h-full">
-                    <Image alt='some alt' width={100} height={100} src={"https://dummyimage.com/720x400"} />
-                </div>
-                <div className={`lower bg-primary text-secondary p-4 flex flex-col gap-10 ${bgcolor}`}>
-                    <div className='flex justify-between'>
-                        <p>25 Commnets</p>
-                        <p>17 Likes</p>
-                        <p>By John</p>
+        <React.Fragment>
+            {children && children.map((item: any, index: number) => {
+                return (<div key={index} className={`${textcolor} ${fontfamily}`}>
+                    <div className="aspect-3/2 [&>img]:object-cover [&>img]:object-top [&>img]:w-full [&>img]:h-full">
+                        <PrismicNextImage
+                            field={item.primary.blog_image}
+                        />
                     </div>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusantium?...</div>
-                    <div>Read More</div>
-                </div>
-            </div>
-            <div>
-                <div className="aspect-3/2 [&>img]:object-cover [&>img]:object-top [&>img]:w-full [&>img]:h-full">
-                    <Image alt='some alt' width={100} height={100} src={"https://images.prismic.io/himanshu-folio/Z2-cAJbqstJ983eV_Col-block.png?w=800&h=800&dpr=1&fit=max&auto=compress%2Cformat"} fetchPriority='high' />
-                </div>
-                <div className={`lower bg-primary text-secondary p-4 flex flex-col gap-10 ${bgcolor}`}>
-                    <div className='flex justify-between'>
-                        <p>25 Commnets</p>
-                        <p>17 Likes</p>
-                        <p>By John</p>
+                    <div className={`lower bg-primary text-secondary p-4 flex flex-col gap-3 md:gap-10 ${bgcolor}`}>
+                        <div className='flex justify-between'>
+                            <p>25 Commnets</p>
+                            <p>17 Likes</p>
+                            <p>By John</p>
+                        </div>
+                        <div>
+                            {asText(item.primary.blog_title)?.slice(0, 140)}...
+                        </div>
+                        <div><Link href={url!}>Read More</Link></div>
                     </div>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusantium?...</div>
-                    <div>Read More</div>
-                </div>
-            </div>
-            <div>
-                <div className="aspect-3/2 [&>img]:object-cover [&>img]:object-top [&>img]:w-full [&>img]:h-full">
-                    <Image alt='some alt' width={100} height={100} src={"https://images.prismic.io/himanshu-folio/Z2-cAJbqstJ983eV_Col-block.png?w=800&h=800&dpr=1&fit=max&auto=compress%2Cformat"} fetchPriority='high' />
-                </div>
-                <div className={`lower bg-primary text-secondary p-4 flex flex-col gap-10 ${bgcolor}`}>
-                    <div className='flex justify-between'>
-                        <p>25 Commnets</p>
-                        <p>17 Likes</p>
-                        <p>By John</p>
-                    </div>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusantium?...</div>
-                    <div>Read More</div>
-                </div>
-            </div>
-        </div>
+                </div>)
+            })}
+        </React.Fragment >
     )
 }

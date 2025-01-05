@@ -22,7 +22,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
       {slice.primary.testimonial_card.map((item, index: number) => (
         // Render the item
         <div className={`flex gap-10 md:flex-row flex-col ${item.reverse && "flex-row-reverse"}`} key={index}>
-          <div className="w-[100%] sm:mx-auto sm:w-[50%] md:w-[40%]"><PrismicNextImage field={item.image} /></div>
+          <div className="w-[60%] mx-auto md:w-[40%]"><PrismicNextImage field={item.image} /></div>
           <div className="w-full m-auto">
             <div className="w-[10%] md:w-10"><PrismicNextImage field={slice.primary.testimonial_quote} /></div>
             <PrismicRichText field={item.testimonial_description} />

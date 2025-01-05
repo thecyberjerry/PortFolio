@@ -23,7 +23,7 @@
   }
 
   h3 {
-    @apply text-sm md:text-2xl; /* Adjust size for h3 */
+    @apply text-sm md:text-xl; /* Adjust size for h3 */
   }
 
   h4 {
@@ -31,11 +31,14 @@
   }
 
   h5 {
-    @apply text-lg; /* Adjust size for h5 */
+    @apply text-sm md:text-lg; /* Adjust size for h5 */
   }
 
   h6 {
     @apply text-base; /* Adjust size for h6 */
+  }
+  p {
+    @apply text-base;
   }
 }
 :root {
@@ -58,7 +61,13 @@
   color: var(--primary-color);
   font-size: 30px;
 }
-
+.slick-prev {
+  left: -20px;
+  z-index: 10;
+}
+.slick-next{
+  right: -10px;
+}
 @media only screen and (max-width: 640px) {
   .slick-arrow {
     display: none !important;

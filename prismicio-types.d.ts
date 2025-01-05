@@ -4,6 +4,105 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type BlogPageDocumentDataSlicesSlice = BlogcardsSlice | SocialsSlice;
+
+/**
+ * Content for Blog Page documents
+ */
+interface BlogPageDocumentData {
+  /**
+   * Slice Zone field in *Blog Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BlogPageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Blog Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blog_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Blog Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: blog_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Blog Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Blog Page document from Prismic
+ *
+ * - **API ID**: `blog_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BlogPageDocumentData>,
+    "blog_page",
+    Lang
+  >;
+
+type BlogpostDocumentDataSlicesSlice = BlogsliceSlice;
+
+/**
+ * Content for Blogpost documents
+ */
+interface BlogpostDocumentData {
+  /**
+   * Slice Zone field in *Blogpost*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BlogpostDocumentDataSlicesSlice>;
+}
+
+/**
+ * Blogpost document from Prismic
+ *
+ * - **API ID**: `blogpost`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogpostDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BlogpostDocumentData>,
+    "blogpost",
+    Lang
+  >;
+
 type FooterDocumentDataSlicesSlice = FooterSlice;
 
 /**
@@ -109,7 +208,46 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = FooterDocument | HomeDocument;
+type NavbarDocumentDataSlicesSlice = NavbarSlice;
+
+/**
+ * Content for Navbar documents
+ */
+interface NavbarDocumentData {
+  /**
+   * Slice Zone field in *Navbar*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NavbarDocumentDataSlicesSlice>;
+}
+
+/**
+ * Navbar document from Prismic
+ *
+ * - **API ID**: `navbar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavbarDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavbarDocumentData>,
+    "navbar",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | BlogPageDocument
+  | BlogpostDocument
+  | FooterDocument
+  | HomeDocument
+  | NavbarDocument;
 
 /**
  * Primary content in *Blogcards → Default → Primary*
@@ -199,9 +337,118 @@ export type BlogcardsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Blogcards → With Display Image → Primary*
+ */
+export interface BlogcardsSliceWithDisplayImagePrimary {
+  /**
+   * Image field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.withDisplayImage.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.withDisplayImage.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Font Family field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: blogcards.withDisplayImage.primary.font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
+
+  /**
+   * Blog Card Background Colour field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: bg-primary
+   * - **API ID Path**: blogcards.withDisplayImage.primary.blog_card_background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  blog_card_background_colour: prismic.SelectField<
+    "bg-primary" | "bg-secondary" | "bg-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Font Colour field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text-primary
+   * - **API ID Path**: blogcards.withDisplayImage.primary.font_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_colour: prismic.SelectField<
+    "text-primary" | "text-secondary" | "text-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Read More Button Text field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.withDisplayImage.primary.read_more_button_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  read_more_button_text: prismic.RichTextField;
+
+  /**
+   * Read More Button Redirect Icon field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.withDisplayImage.primary.read_more_button_redirect_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  read_more_button_redirect_icon: prismic.ImageField<never>;
+
+  /**
+   * Tag field in *Blogcards → With Display Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogcards.withDisplayImage.primary.tag
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tag: prismic.RichTextField;
+}
+
+/**
+ * With Display Image variation for Blogcards Slice
+ *
+ * - **API ID**: `withDisplayImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogcardsSliceWithDisplayImage = prismic.SharedSliceVariation<
+  "withDisplayImage",
+  Simplify<BlogcardsSliceWithDisplayImagePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Blogcards*
  */
-type BlogcardsSliceVariation = BlogcardsSliceDefault;
+type BlogcardsSliceVariation =
+  | BlogcardsSliceDefault
+  | BlogcardsSliceWithDisplayImage;
 
 /**
  * Blogcards Shared Slice
@@ -213,6 +460,113 @@ type BlogcardsSliceVariation = BlogcardsSliceDefault;
 export type BlogcardsSlice = prismic.SharedSlice<
   "blogcards",
   BlogcardsSliceVariation
+>;
+
+/**
+ * Item in *Blogslice → Default → Primary → Blog text*
+ */
+export interface BlogsliceSliceDefaultPrimaryBlogTextItem {
+  /**
+   * Text field in *Blogslice → Default → Primary → Blog text*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogslice.default.primary.blog_text[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Blogslice → Default → Primary*
+ */
+export interface BlogsliceSliceDefaultPrimary {
+  /**
+   * Blog title field in *Blogslice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogslice.default.primary.blog_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  blog_title: prismic.RichTextField;
+
+  /**
+   * Blog text field in *Blogslice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogslice.default.primary.blog_text[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  blog_text: prismic.GroupField<
+    Simplify<BlogsliceSliceDefaultPrimaryBlogTextItem>
+  >;
+
+  /**
+   * Font family field in *Blogslice → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: blogslice.default.primary.font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
+
+  /**
+   * Text Colour field in *Blogslice → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text-primary
+   * - **API ID Path**: blogslice.default.primary.text_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_colour: prismic.SelectField<
+    "text-primary" | "text-secondary" | "text-tertiary",
+    "filled"
+  >;
+
+  /**
+   * Blog Image field in *Blogslice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogslice.default.primary.blog_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  blog_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Blogslice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogsliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogsliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Blogslice*
+ */
+type BlogsliceSliceVariation = BlogsliceSliceDefault;
+
+/**
+ * Blogslice Shared Slice
+ *
+ * - **API ID**: `blogslice`
+ * - **Description**: Blogslice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogsliceSlice = prismic.SharedSlice<
+  "blogslice",
+  BlogsliceSliceVariation
 >;
 
 /**
@@ -1441,17 +1795,33 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BlogPageDocument,
+      BlogPageDocumentData,
+      BlogPageDocumentDataSlicesSlice,
+      BlogpostDocument,
+      BlogpostDocumentData,
+      BlogpostDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      NavbarDocument,
+      NavbarDocumentData,
+      NavbarDocumentDataSlicesSlice,
       AllDocumentTypes,
       BlogcardsSlice,
       BlogcardsSliceDefaultPrimary,
+      BlogcardsSliceWithDisplayImagePrimary,
       BlogcardsSliceVariation,
       BlogcardsSliceDefault,
+      BlogcardsSliceWithDisplayImage,
+      BlogsliceSlice,
+      BlogsliceSliceDefaultPrimaryBlogTextItem,
+      BlogsliceSliceDefaultPrimary,
+      BlogsliceSliceVariation,
+      BlogsliceSliceDefault,
       ContactSlice,
       ContactSliceDefaultPrimarySocialsItem,
       ContactSliceDefaultPrimary,
