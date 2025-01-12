@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  blogcards: dynamic(() => import("./Blogcards")),
   blogslice: dynamic(() => import("./Blogslice")),
   contact: dynamic(() => import("./Contact")),
   footer: dynamic(() => import("./Footer")),

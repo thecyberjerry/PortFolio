@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPageDocumentDataSlicesSlice = BlogcardsSlice | SocialsSlice;
+type BlogPageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Blog Page documents
@@ -66,6 +66,40 @@ export type BlogPageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<BlogPageDocumentData>,
     "blog_page",
+    Lang
+  >;
+
+type BlogpageheaderDocumentDataSlicesSlice = HeroSlice;
+
+/**
+ * Content for Blogpageheader documents
+ */
+interface BlogpageheaderDocumentData {
+  /**
+   * Slice Zone field in *Blogpageheader*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpageheader.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BlogpageheaderDocumentDataSlicesSlice>;
+}
+
+/**
+ * Blogpageheader document from Prismic
+ *
+ * - **API ID**: `blogpageheader`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogpageheaderDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BlogpageheaderDocumentData>,
+    "blogpageheader",
     Lang
   >;
 
@@ -140,7 +174,6 @@ export type FooterDocument<Lang extends string = string> =
 type HomeDocumentDataSlicesSlice =
   | FooterSlice
   | PortofolioSlice
-  | BlogcardsSlice
   | StatisticsSlice
   | ContactSlice
   | TestimonialsSlice
@@ -244,223 +277,11 @@ export type NavbarDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | BlogPageDocument
+  | BlogpageheaderDocument
   | BlogpostDocument
   | FooterDocument
   | HomeDocument
   | NavbarDocument;
-
-/**
- * Primary content in *Blogcards → Default → Primary*
- */
-export interface BlogcardsSliceDefaultPrimary {
-  /**
-   * Title field in *Blogcards → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Font Family field in *Blogcards → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: font-rubik
-   * - **API ID Path**: blogcards.default.primary.font_family
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
-
-  /**
-   * Blog Card Background Colour field in *Blogcards → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: bg-primary
-   * - **API ID Path**: blogcards.default.primary.blog_card_background_colour
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  blog_card_background_colour: prismic.SelectField<
-    "bg-primary" | "bg-secondary" | "bg-tertiary",
-    "filled"
-  >;
-
-  /**
-   * Font Colour field in *Blogcards → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: text-primary
-   * - **API ID Path**: blogcards.default.primary.font_colour
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  font_colour: prismic.SelectField<
-    "text-primary" | "text-secondary" | "text-tertiary",
-    "filled"
-  >;
-
-  /**
-   * Read More Button Text field in *Blogcards → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.default.primary.read_more_button_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  read_more_button_text: prismic.RichTextField;
-
-  /**
-   * Read More Button Redirect Icon field in *Blogcards → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.default.primary.read_more_button_redirect_icon
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  read_more_button_redirect_icon: prismic.ImageField<never>;
-}
-
-/**
- * Default variation for Blogcards Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type BlogcardsSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<BlogcardsSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Primary content in *Blogcards → With Display Image → Primary*
- */
-export interface BlogcardsSliceWithDisplayImagePrimary {
-  /**
-   * Image field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.withDisplayImage.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Title field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.withDisplayImage.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Font Family field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: font-rubik
-   * - **API ID Path**: blogcards.withDisplayImage.primary.font_family
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
-
-  /**
-   * Blog Card Background Colour field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: bg-primary
-   * - **API ID Path**: blogcards.withDisplayImage.primary.blog_card_background_colour
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  blog_card_background_colour: prismic.SelectField<
-    "bg-primary" | "bg-secondary" | "bg-tertiary",
-    "filled"
-  >;
-
-  /**
-   * Font Colour field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: text-primary
-   * - **API ID Path**: blogcards.withDisplayImage.primary.font_colour
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  font_colour: prismic.SelectField<
-    "text-primary" | "text-secondary" | "text-tertiary",
-    "filled"
-  >;
-
-  /**
-   * Read More Button Text field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.withDisplayImage.primary.read_more_button_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  read_more_button_text: prismic.RichTextField;
-
-  /**
-   * Read More Button Redirect Icon field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.withDisplayImage.primary.read_more_button_redirect_icon
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  read_more_button_redirect_icon: prismic.ImageField<never>;
-
-  /**
-   * Tag field in *Blogcards → With Display Image → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogcards.withDisplayImage.primary.tag
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  tag: prismic.RichTextField;
-}
-
-/**
- * With Display Image variation for Blogcards Slice
- *
- * - **API ID**: `withDisplayImage`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type BlogcardsSliceWithDisplayImage = prismic.SharedSliceVariation<
-  "withDisplayImage",
-  Simplify<BlogcardsSliceWithDisplayImagePrimary>,
-  never
->;
-
-/**
- * Slice variation for *Blogcards*
- */
-type BlogcardsSliceVariation =
-  | BlogcardsSliceDefault
-  | BlogcardsSliceWithDisplayImage;
-
-/**
- * Blogcards Shared Slice
- *
- * - **API ID**: `blogcards`
- * - **Description**: Blogcards
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type BlogcardsSlice = prismic.SharedSlice<
-  "blogcards",
-  BlogcardsSliceVariation
->;
 
 /**
  * Item in *Blogslice → Default → Primary → Blog text*
@@ -482,10 +303,20 @@ export interface BlogsliceSliceDefaultPrimaryBlogTextItem {
  */
 export interface BlogsliceSliceDefaultPrimary {
   /**
-   * Blog title field in *Blogslice → Default → Primary*
+   * Main Blog Title field in *Blogslice → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
+   * - **API ID Path**: blogslice.default.primary.main_blog_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  main_blog_title: prismic.RichTextField;
+
+  /**
+   * Blog title field in *Blogslice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Make sure to enter Minimum of of 40-100 Words
    * - **API ID Path**: blogslice.default.primary.blog_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
@@ -1085,9 +916,147 @@ export type HeroSliceSocials = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Blogpageheader → Primary*
+ */
+export interface HeroSliceBlogpageheaderPrimary {
+  /**
+   * Greeting text hero section field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.blogpageheader.primary.greeting_text_hero_section
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  greeting_text_hero_section: prismic.RichTextField;
+
+  /**
+   * greeting_text_font field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: hero.blogpageheader.primary.greeting_text_font
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  greeting_text_font: prismic.SelectField<
+    "font-rubik" | "font-ubuntu",
+    "filled"
+  >;
+
+  /**
+   * Initial Text field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.blogpageheader.primary.initial_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  initial_text: prismic.TitleField;
+
+  /**
+   * Highlighted Text field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.blogpageheader.primary.highlighted_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  highlighted_text: prismic.RichTextField;
+
+  /**
+   * Blog Quote field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.blogpageheader.primary.blog_quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  blog_quote: prismic.RichTextField;
+
+  /**
+   * Name Font Weight field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-thin
+   * - **API ID Path**: hero.blogpageheader.primary.name_font_weight
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  name_font_weight: prismic.SelectField<
+    | "font-thin"
+    | "font-extralight"
+    | "font-light"
+    | "font-normal"
+    | "font-medium"
+    | "font-semibold"
+    | "font-bold"
+    | "font-extrabold"
+    | "font-black",
+    "filled"
+  >;
+
+  /**
+   * Hero section secondary text field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.blogpageheader.primary.hero_section_secondary_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  hero_section_secondary_text: prismic.RichTextField;
+
+  /**
+   * Hero section secondary sub text field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.blogpageheader.primary.hero_section_secondary_sub_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  hero_section_secondary_sub_text: prismic.RichTextField;
+
+  /**
+   * Hero image field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.blogpageheader.primary.hero_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
+   * Hero section text font field in *Hero → Blogpageheader → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: hero.blogpageheader.primary.hero_section_text_font
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  hero_section_text_font: prismic.SelectField<
+    "font-rubik" | "font-ubuntu",
+    "filled"
+  >;
+}
+
+/**
+ * Blogpageheader variation for Hero Slice
+ *
+ * - **API ID**: `blogpageheader`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceBlogpageheader = prismic.SharedSliceVariation<
+  "blogpageheader",
+  Simplify<HeroSliceBlogpageheaderPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceSocials;
+type HeroSliceVariation = HeroSliceSocials | HeroSliceBlogpageheader;
 
 /**
  * Hero Shared Slice
@@ -1369,6 +1338,16 @@ export interface PortofolioSliceDefaultPrimaryImageGalleryItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * Link field in *Portfolio → Default → Primary → Image Gallery*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portofolio.default.primary.image_gallery[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -1798,6 +1777,9 @@ declare module "@prismicio/client" {
       BlogPageDocument,
       BlogPageDocumentData,
       BlogPageDocumentDataSlicesSlice,
+      BlogpageheaderDocument,
+      BlogpageheaderDocumentData,
+      BlogpageheaderDocumentDataSlicesSlice,
       BlogpostDocument,
       BlogpostDocumentData,
       BlogpostDocumentDataSlicesSlice,
@@ -1811,12 +1793,6 @@ declare module "@prismicio/client" {
       NavbarDocumentData,
       NavbarDocumentDataSlicesSlice,
       AllDocumentTypes,
-      BlogcardsSlice,
-      BlogcardsSliceDefaultPrimary,
-      BlogcardsSliceWithDisplayImagePrimary,
-      BlogcardsSliceVariation,
-      BlogcardsSliceDefault,
-      BlogcardsSliceWithDisplayImage,
       BlogsliceSlice,
       BlogsliceSliceDefaultPrimaryBlogTextItem,
       BlogsliceSliceDefaultPrimary,
@@ -1834,8 +1810,10 @@ declare module "@prismicio/client" {
       FooterSliceDefault,
       HeroSlice,
       HeroSliceSocialsPrimary,
+      HeroSliceBlogpageheaderPrimary,
       HeroSliceVariation,
       HeroSliceSocials,
+      HeroSliceBlogpageheader,
       MyWorkSlice,
       MyWorkSliceDefaultPrimaryWorkCardItem,
       MyWorkSliceDefaultPrimary,

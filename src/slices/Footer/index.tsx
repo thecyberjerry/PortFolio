@@ -2,7 +2,7 @@ import Button from "@/app/components/Button";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { JSX } from "react";
-
+import Form from 'next/form'
 /**
  * Props for `Footer`.
  */
@@ -32,8 +32,8 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
             ))}
           </div>
         </div>
-        <form className={`${slice.primary.form_background_colour} ${slice.primary.form_font_colour} py-8 px-4 md:p-20`} action="#">
-          <div >
+        <Form action={"#"} className={`${slice.primary.form_background_colour} ${slice.primary.form_font_colour} py-8 px-4 md:p-20`}>
+          <div>
             <input type="text" id="name" className="bg-transparent border-b-2 w-full mb-10 placeholder:text-secondary focus:outline-none" placeholder="Your Name" required />
           </div>
           <div>
@@ -51,8 +51,7 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
               <PrismicRichText field={slice.primary.button_text} />
             </Button>
           }
-
-        </form>
+        </Form>
       </div>
     </section>
   );

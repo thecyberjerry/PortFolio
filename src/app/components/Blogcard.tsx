@@ -3,7 +3,6 @@ import { PrismicNextImage } from '@prismicio/next'
 import { asText } from '@prismicio/helpers'
 import React, { JSX } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 export type CustomBlogcard = {
     fontfamily?: string,
@@ -13,7 +12,6 @@ export type CustomBlogcard = {
     children?: any
 }
 export default function Blogcard({ fontfamily, bgcolor, textcolor, children, url }: CustomBlogcard): JSX.Element {
-    const router = useRouter()
     return (
         <React.Fragment>
             {children && children.map((item: any, index: number) => {

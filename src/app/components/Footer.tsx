@@ -9,7 +9,7 @@ export default function Footer({ slice }: Customfooter): JSX.Element {
             <PrismicRichText field={slice.primary.title} />
             <PrismicRichText field={slice.primary.description} />
             {slice.primary.location_information.map((item: any, index: number) => (
-                <div>
+                <div key={index}>
                     <PrismicRichText field={item.location} />
                 </div>
             ))}

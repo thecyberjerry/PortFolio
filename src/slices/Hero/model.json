@@ -113,6 +113,125 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "blogpageheader",
+      "name": "Blogpageheader",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "greeting_text_hero_section": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Greeting text hero section",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph,heading3,heading4,heading5,heading6,strong,em"
+          }
+        },
+        "greeting_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        },
+        "initial_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Initial Text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading1,heading2,heading3,heading4,heading5,heading6"
+          }
+        },
+        "highlighted_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Highlighted Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "blog_quote": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Blog Quote",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading1,heading2,heading3,strong"
+          }
+        },
+        "name_font_weight": {
+          "type": "Select",
+          "config": {
+            "label": "Name Font Weight",
+            "placeholder": "",
+            "options": [
+              "font-thin",
+              "font-extralight",
+              "font-light",
+              "font-normal",
+              "font-medium",
+              "font-semibold",
+              "font-bold",
+              "font-extrabold",
+              "font-black"
+            ],
+            "default_value": "font-thin"
+          }
+        },
+        "hero_section_secondary_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero section secondary text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,heading4,heading5,heading6,strong,em,heading3,heading2"
+          }
+        },
+        "hero_section_secondary_sub_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero section secondary sub text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,heading5,heading6,strong,em"
+          }
+        },
+        "hero_image": {
+          "type": "Image",
+          "config": {
+            "label": "Hero image",
+            "constraint": {
+              "width": 550,
+              "height": 640
+            },
+            "thumbnails": []
+          }
+        },
+        "hero_section_text_font": {
+          "type": "Select",
+          "config": {
+            "label": "Hero section text font",
+            "placeholder": "",
+            "options": [
+              "font-rubik",
+              "font-ubuntu"
+            ],
+            "default_value": "font-rubik"
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

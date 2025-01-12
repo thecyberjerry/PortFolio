@@ -59,6 +59,18 @@
 										}
 									]
 								}
+							],
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "179e3ffe-9ab0-4d97-94ac-b0cc54612bf7",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "she"
+									}
+								}
 							]
 						]
 					}

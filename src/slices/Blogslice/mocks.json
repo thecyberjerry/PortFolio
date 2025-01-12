@@ -31,9 +31,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading4",
+						"type": "heading2",
 						"content": {
-							"text": "While"
+							"text": "Invented"
 						}
 					}
 				]
@@ -70,6 +70,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"main_blog_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Shinning"
+						}
+					}
+				]
 			}
 		},
 		"items": []

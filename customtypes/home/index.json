@@ -17,9 +17,6 @@
             "portofolio": {
               "type": "SharedSlice"
             },
-            "blogcards": {
-              "type": "SharedSlice"
-            },
             "statistics": {
               "type": "SharedSlice"
             },

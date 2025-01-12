@@ -1,8 +1,8 @@
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { asImageSrc, asLink, asText } from "@prismicio/helpers";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { JSX } from "react";
-
+import { Card, FocusCards } from "@/components/ui/focus-cards";
 /**
  * Props for `Portofolio`.
  */
@@ -11,7 +11,13 @@ export type PortofolioProps = SliceComponentProps<Content.PortofolioSlice>;
 /**
  * Component for "Portofolio" Slices.
  */
+
+function FocusCardsDemo({ card }: { card: Card[] }) {
+  return <FocusCards cards={card} />;
+}
+
 const Portofolio = ({ slice }: PortofolioProps): JSX.Element => {
+  const data = slice.primary.image_gallery.map((item) => ({ src: asImageSrc(item.image) || "", title: asText(item.title) || "", url: asLink(item.link) || "", fontfamily: slice.primary.font_family || "font-rubik" }));
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -19,20 +25,7 @@ const Portofolio = ({ slice }: PortofolioProps): JSX.Element => {
       className={`${slice.primary.font_family} mt-20 md:mt-32  items-center flex flex-col gap-10`}
     >
       <div className={`${slice.primary.font_colour}`}><PrismicRichText field={slice.primary.title} /></div>
-      <div className="columns-2 md:columns-3 gap-4 space-y-3 w-full">
-        {slice.primary.image_gallery.map((item, index: number) => (
-          <div className="relative group overflow-hidden" key={index}>
-            <PrismicNextImage
-              field={item.image}
-              className="md:w-full rounded-lg group-hover:brightness-75 transition duration-300 "
-            />
-            <span className="absolute -bottom-6 -right-6 text-white transition-all duration-300 group-hover:bottom-5 group-hover:right-5  md:group-hover:bottom-5 md:group-hover:right-12">
-              <PrismicRichText field={item.title} />
-            </span>
-          </div>
-
-        ))}
-      </div>
+      <FocusCardsDemo card={data} />
     </section>
   );
 };

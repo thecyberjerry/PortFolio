@@ -11,10 +11,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "blogcards": {
-              "type": "SharedSlice"
-            },
-            "socials": {
+            "hero": {
               "type": "SharedSlice"
             }
           }

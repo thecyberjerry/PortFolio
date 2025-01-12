@@ -12,13 +12,22 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "main_blog_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Main Blog Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading4,heading3,strong,em"
+          }
+        },
         "blog_title": {
           "type": "StructuredText",
           "config": {
             "label": "Blog title",
-            "placeholder": "",
+            "placeholder": "Make sure to enter Minimum of of 40-100 Words",
             "allowTargetBlank": true,
-            "multi": "heading4,heading5,heading6,em,hyperlink"
+            "multi": "heading2,heading3,heading4,heading5,heading6,em,hyperlink"
           }
         },
         "blog_text": {
