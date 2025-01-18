@@ -7,9 +7,9 @@ import { Suspense } from "react";
 import Loading from "./loading";
 type Customblogslice =
     {
-        slice: Pick<BlogsliceProps, "slice">
         params: Promise<{ uid: string }>
     }
+
 export default async function Page({ params }: Customblogslice) {
     const slug = (await params).uid;
     const client = createClient();

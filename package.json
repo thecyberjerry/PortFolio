@@ -10,6 +10,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "@prismicio/client": "^7.13.1",
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.7.1",
@@ -20,13 +21,14 @@
     "@tsparticles/slim": "^3.7.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.17.0",
+    "framer-motion": "^11.18.1",
     "lucide-react": "^0.471.0",
     "mini-svg-data-uri": "^1.4.4",
     "mongoose": "^8.9.4",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "tailwind-merge": "^2.6.0",
@@ -38,9 +40,10 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-slick": "^0.23.13",
-    "postcss": "^8",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
     "slice-machine-ui": "^2.11.1",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }

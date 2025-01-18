@@ -33,6 +33,7 @@ export default async function RootLayout({
   const footer = await client.getSingle("footer");
   return (
     <html lang="en">
+      {/* <head><script src="https://cdn.tailwindcss.com"></script></head> */}
       <body className={`${rubikSans.variable} ${ubuntuSans.variable} container mx-auto p-2`}>
         <SliceZone slices={navbar.data.slices} components={components} /> {/* NAVBAR HERE*/}
         <div>{children}</div>

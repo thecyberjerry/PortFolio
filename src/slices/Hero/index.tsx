@@ -24,7 +24,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>}
         <div className={`flex flex-col gap-4 ${slice.primary.hero_section_text_font}`}>
           <div className="flex gap-2 md:gap-3">
-            <PrismicRichText field={slice.primary.introduction_text} /><span className={` ${slice.primary.name_font_weight}`}><PrismicRichText field={slice.primary.name} /></span>
+            {slice.variation === "socials" &&
+              <React.Fragment>
+                <PrismicRichText field={slice.primary.introduction_text} /><span className={` ${slice.primary.name_font_weight}`}><PrismicRichText field={slice.primary.name} /></span>
+              </React.Fragment>}
           </div>
           <PrismicRichText
             field={slice.primary.hero_section_secondary_text}

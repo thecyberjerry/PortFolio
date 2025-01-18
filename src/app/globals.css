@@ -118,7 +118,7 @@
   left: -20px;
   z-index: 10;
 }
-.slick-next{
+.slick-next {
   right: -10px;
 }
 @media only screen and (max-width: 640px) {

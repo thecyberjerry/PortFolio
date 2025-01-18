@@ -26,7 +26,7 @@ function AnimatedTestimonialsDemo() {
         return obj
     })
 
-    return React.createElement("div", { className: "mt-32" }, <React.Fragment>
+    return React.createElement("div", { className: "mt-20 md:mt-32" }, <React.Fragment>
         {React.createElement("h2", { className: "font-ubuntu" }, "Explore my other blogs")}
         <AnimatedTestimonials testimonials={allSlice} />
     </React.Fragment>);
