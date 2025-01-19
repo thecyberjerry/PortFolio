@@ -39,6 +39,7 @@ export default {
     "hover:text-tertiary",
     "font-rubik",
     "font-ubuntu",
+    "flex-row-reverse",
   ],
   theme: {
     extend: {

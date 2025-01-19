@@ -172,6 +172,7 @@ export type FooterDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | ParallexSlice
   | FooterSlice
   | PortofolioSlice
   | StatisticsSlice
@@ -1316,6 +1317,129 @@ type NavbarSliceVariation = NavbarSliceDefault;
 export type NavbarSlice = prismic.SharedSlice<"navbar", NavbarSliceVariation>;
 
 /**
+ * Item in *Parallex → Default → Primary → Parallex content*
+ */
+export interface ParallexSliceDefaultPrimaryParallexContentItem {
+  /**
+   * Image field in *Parallex → Default → Primary → Parallex content*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parallex.default.primary.parallex_content[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Parallex → Default → Primary → Parallex content*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Title for parallex image
+   * - **API ID Path**: parallex.default.primary.parallex_content[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Link field in *Parallex → Default → Primary → Parallex content*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parallex.default.primary.parallex_content[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Parallex → Default → Primary*
+ */
+export interface ParallexSliceDefaultPrimary {
+  /**
+   * Heading text field in *Parallex → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter Heading text
+   * - **API ID Path**: parallex.default.primary.heading_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_text: prismic.RichTextField;
+
+  /**
+   * Description Text field in *Parallex → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter Description text
+   * - **API ID Path**: parallex.default.primary.description_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_text: prismic.RichTextField;
+
+  /**
+   * Font family field in *Parallex → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Enter font family
+   * - **Default Value**: font-rubik
+   * - **API ID Path**: parallex.default.primary.font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  font_family: prismic.SelectField<"font-rubik" | "font-ubuntu", "filled">;
+
+  /**
+   * Parallex content field in *Parallex → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parallex.default.primary.parallex_content[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  parallex_content: prismic.GroupField<
+    Simplify<ParallexSliceDefaultPrimaryParallexContentItem>
+  >;
+
+  /**
+   * Section Title field in *Parallex → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parallex.default.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Parallex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParallexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ParallexSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Parallex*
+ */
+type ParallexSliceVariation = ParallexSliceDefault;
+
+/**
+ * Parallex Shared Slice
+ *
+ * - **API ID**: `parallex`
+ * - **Description**: Parallex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParallexSlice = prismic.SharedSlice<
+  "parallex",
+  ParallexSliceVariation
+>;
+
+/**
  * Item in *Portfolio → Default → Primary → Image Gallery*
  */
 export interface PortofolioSliceDefaultPrimaryImageGalleryItem {
@@ -1823,6 +1947,11 @@ declare module "@prismicio/client" {
       NavbarSliceDefaultPrimary,
       NavbarSliceVariation,
       NavbarSliceDefault,
+      ParallexSlice,
+      ParallexSliceDefaultPrimaryParallexContentItem,
+      ParallexSliceDefaultPrimary,
+      ParallexSliceVariation,
+      ParallexSliceDefault,
       PortofolioSlice,
       PortofolioSliceDefaultPrimaryImageGalleryItem,
       PortofolioSliceDefaultPrimary,

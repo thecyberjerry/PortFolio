@@ -23,6 +23,7 @@ export default function Customform({ slice }: Pick<FooterProps, "slice">) {
         reValidateMode: "onSubmit"
     })
     const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data)
+    
     function Inputerrors() {
         const IFormInput: Array<keyof IFormInput> = ["name", "budget", "message", "email"];
         return IFormInput.map((item, index: number) => {
@@ -39,8 +40,9 @@ export default function Customform({ slice }: Pick<FooterProps, "slice">) {
             />
         })
     }
+    
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className={`${slice.primary.form_background_colour} ${slice.primary.form_font_colour} py-8 px-4 md:p-14 gap-8 flex flex-col`}>
+        <form id="footer" onSubmit={handleSubmit(onSubmit)} className={`${slice.primary.form_background_colour} ${slice.primary.form_font_colour} py-8 px-4 md:p-14 gap-8 flex flex-col`}>
             <div className="text-red-500 text-center md:text-justify">
                 <Inputerrors />
             </div>

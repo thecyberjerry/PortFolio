@@ -1,4 +1,6 @@
+"use client"
 import Button from "@/app/components/Button";
+import { Scrolltobottom } from "@/app/utils/scrolltobottom";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -24,7 +26,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
         <h5>{slice.primary.title}</h5>
         <PrismicRichText field={slice.primary.sub_title} />
       </div>
-      <Button btnBg={slice.primary.button_background_colour} btnTextColour={slice.primary.button_text_colour} btnTextFont={slice.primary.button_text_font} >
+      <Button onClick={Scrolltobottom} btnBg={slice.primary.button_background_colour} btnTextColour={slice.primary.button_text_colour} btnTextFont={slice.primary.button_text_font} >
         <PrismicRichText field={slice.primary.button_text} />
       </Button>
       <div className="flex gap-10">

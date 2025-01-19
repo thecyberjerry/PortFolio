@@ -9,6 +9,7 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   my_work: dynamic(() => import("./MyWork")),
   navbar: dynamic(() => import("./Navbar")),
+  parallex: dynamic(() => import("./Parallex")),
   portofolio: dynamic(() => import("./Portfolio")),
   socials: dynamic(() => import("./Socials")),
   statistics: dynamic(() => import("./Statistics")),

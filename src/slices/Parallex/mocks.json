@@ -1,0 +1,109 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Sleep"
+						}
+					}
+				]
+			},
+			"description_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Involved"
+						}
+					}
+				]
+			},
+			"font_family": {
+				"__TYPE__": "FieldContent",
+				"value": "font-ubuntu",
+				"type": "Select"
+			},
+			"parallex_content": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+										"width": 4010,
+										"height": 4010
+									},
+									"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+									"width": 4010,
+									"height": 4010,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Dolore ea exercitation exercitation ut. Excepteur nisi Lorem nisi sunt velit. Aute sit voluptate officia proident dolor commodo est amet in tempor occaecat officia consequat dolor."
+											}
+										}
+									]
+								}
+							],
+							[
+								"link",
+								{
+									"key": "f5b01d13-d2d7-4d08-a87d-29bb6d8d9ae9",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "excited"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim duis nisi ad. Deserunt ullamco est ut nulla dolor et veniam labore nostrud elit. Quis proident ut pariatur enim mollit sit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
