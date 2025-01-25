@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
+    "@prisma/client": "^6.2.1",
     "@prismicio/client": "^7.13.1",
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.7.1",
@@ -42,6 +43,7 @@
     "@types/react-slick": "^0.23.13",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.1",
+    "prisma": "^6.2.1",
     "slice-machine-ui": "^2.11.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"

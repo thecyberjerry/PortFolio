@@ -5,7 +5,11 @@ export const config = {
     invalidLength: "Invalid Email Length",
     invalidEmailType: "Invalid Email",
   },
-  budget: { negativeBudget: "Negative Budget not allowed" },
+  budget: {
+    negativeBudget: "Negative Budget not allowed",
+    maxBudget: "Invalid Budget Amount",
+    minBudget: "Invalid Budget Amount",
+  },
   message: {
     requiredMessage: "Message is required",
     minimumMessage: "Minimum 100 message length required",
@@ -16,5 +20,5 @@ export const formConfigValues = {
   name: { minLength: 10, maxLength: 20 },
   email: { emailMaxLength: 20 },
   message: { minMessageLength: 100, maxMessageLength: 1000 },
-  budgetAmount: { minBudget: 0, maxBudget: 999999 },
+  budgetAmount: { minBudget: 1000, maxBudget: 999999 },
 };

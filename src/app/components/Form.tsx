@@ -5,7 +5,6 @@ import { PrismicRichText } from "@prismicio/react"
 import { FooterProps } from "@/slices/Footer"
 import { ErrorMessage } from "@hookform/error-message"
 import { config, formConfigValues } from "@/app/form.config"
-
 interface IFormInput {
     name: string
     email: string
@@ -22,8 +21,19 @@ export default function Customform({ slice }: Pick<FooterProps, "slice">) {
         mode: "onTouched",
         reValidateMode: "onSubmit"
     })
-    const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data)
-    
+    const onSubmit: SubmitHandler<IFormInput> = (data) => {
+        fetch("/api/save-contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        }).then((response) => response.json()).then((value) => {
+            if (value.status === false) throw new Error()
+            else return value
+        }).catch((error) => { console.log(error, "error") })
+    }
+
     function Inputerrors() {
         const IFormInput: Array<keyof IFormInput> = ["name", "budget", "message", "email"];
         return IFormInput.map((item, index: number) => {
@@ -40,7 +50,7 @@ export default function Customform({ slice }: Pick<FooterProps, "slice">) {
             />
         })
     }
-    
+
     return (
         <form id="footer" onSubmit={handleSubmit(onSubmit)} className={`${slice.primary.form_background_colour} ${slice.primary.form_font_colour} py-8 px-4 md:p-14 gap-8 flex flex-col`}>
             <div className="text-red-500 text-center md:text-justify">
@@ -58,7 +68,7 @@ export default function Customform({ slice }: Pick<FooterProps, "slice">) {
                 })} id="email" className="bg-transparent border-b-2 w-full mb-10 placeholder:text-secondary focus:outline-none" placeholder="Your Email" />
             </div>
             <div>
-                <input min={minBudget} {...register("budget", { required: false, min: { value: minBudget, message: budget.negativeBudget }, max: maxBudget })} type="number" id="budget" className="bg-transparent border-b-2 w-full mb-10 placeholder:text-secondary focus:outline-none" placeholder="Your Budget in INR ₹ (Optional)" />
+                <input {...register("budget", { required: false, min: { value: minBudget, message: budget.minBudget }, max: { value: maxBudget, message: budget.maxBudget } })} type="number" id="budget" className="bg-transparent border-b-2 w-full mb-10 placeholder:text-secondary focus:outline-none" placeholder="Your Budget in INR ₹ (Optional)" />
             </div>
             <div>
                 <textarea {...register("message", { required: message.requiredMessage, minLength: { value: minMessageLength, message: message.minimumMessage }, maxLength: { value: maxMessageLength, message: message.maximumMessage } })} id="message" rows={6} maxLength={maxMessageLength} className="resize-none bg-transparent border-b-2 w-full mb-10 placeholder:text-secondary focus:outline-none" placeholder="Your Message" />
