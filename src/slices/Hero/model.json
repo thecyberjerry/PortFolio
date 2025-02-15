@@ -110,6 +110,27 @@
             ],
             "default_value": "font-rubik"
           }
+        },
+        "from_colour_code": {
+          "type": "Text",
+          "config": {
+            "label": "From Colour Code",
+            "placeholder": "Colour Code in Hex"
+          }
+        },
+        "to_colour_code": {
+          "type": "Text",
+          "config": {
+            "label": "To Colour Code",
+            "placeholder": "Colour Code in Hex"
+          }
+        },
+        "via_colour_code": {
+          "type": "Text",
+          "config": {
+            "label": "Via Colour Code",
+            "placeholder": "Colour Code in Hex"
+          }
         }
       },
       "items": {}

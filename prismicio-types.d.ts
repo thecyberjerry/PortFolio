@@ -901,6 +901,36 @@ export interface HeroSliceSocialsPrimary {
     "font-rubik" | "font-ubuntu",
     "filled"
   >;
+
+  /**
+   * From Colour Code field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Colour Code in Hex
+   * - **API ID Path**: hero.socials.primary.from_colour_code
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  from_colour_code: prismic.KeyTextField;
+
+  /**
+   * To Colour Code field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Colour Code in Hex
+   * - **API ID Path**: hero.socials.primary.to_colour_code
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  to_colour_code: prismic.KeyTextField;
+
+  /**
+   * Via Colour Code field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Colour Code in Hex
+   * - **API ID Path**: hero.socials.primary.via_colour_code
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  via_colour_code: prismic.KeyTextField;
 }
 
 /**
@@ -1245,6 +1275,31 @@ type MyWorkSliceVariation = MyWorkSliceDefault;
 export type MyWorkSlice = prismic.SharedSlice<"my_work", MyWorkSliceVariation>;
 
 /**
+ * Item in *Navbar → Default → Primary → Sidebar Content*
+ */
+export interface NavbarSliceDefaultPrimarySidebarContentItem {
+  /**
+   * Title field in *Navbar → Default → Primary → Sidebar Content*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Add Navigation to Page title
+   * - **API ID Path**: navbar.default.primary.sidebar_content[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Navigation Link field in *Navbar → Default → Primary → Sidebar Content*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.sidebar_content[].navigation_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  navigation_link: prismic.LinkField;
+}
+
+/**
  * Primary content in *Navbar → Default → Primary*
  */
 export interface NavbarSliceDefaultPrimary {
@@ -1287,6 +1342,63 @@ export interface NavbarSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   header_menu_toggle_icon: prismic.ImageField<never>;
+
+  /**
+   * Sidebar Content field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.sidebar_content[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  sidebar_content: prismic.GroupField<
+    Simplify<NavbarSliceDefaultPrimarySidebarContentItem>
+  >;
+
+  /**
+   * Sidebar Font Family field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: font-ubuntu
+   * - **API ID Path**: navbar.default.primary.sidebar_font_family
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  sidebar_font_family: prismic.SelectField<
+    "font-ubuntu" | "font-rubik",
+    "filled"
+  >;
+
+  /**
+   * Sidebar Background Color field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.sidebar_background_color
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sidebar_background_color: prismic.KeyTextField;
+
+  /**
+   * Show Contact Link field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: navbar.default.primary.show_contact_link
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_contact_link: prismic.BooleanField;
+
+  /**
+   * Contact Button Text field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.contact_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_button_text: prismic.KeyTextField;
 }
 
 /**
@@ -1944,6 +2056,7 @@ declare module "@prismicio/client" {
       MyWorkSliceVariation,
       MyWorkSliceDefault,
       NavbarSlice,
+      NavbarSliceDefaultPrimarySidebarContentItem,
       NavbarSliceDefaultPrimary,
       NavbarSliceVariation,
       NavbarSliceDefault,

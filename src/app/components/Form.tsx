@@ -4,6 +4,7 @@ import Button from "./Button"
 import { PrismicRichText } from "@prismicio/react"
 import { FooterProps } from "@/slices/Footer"
 import { ErrorMessage } from "@hookform/error-message"
+import { ToastContainer, toast } from 'react-toastify';
 import { config, formConfigValues } from "@/app/form.config"
 interface IFormInput {
     name: string
@@ -15,23 +16,49 @@ interface IFormInput {
 
 export default function Customform({ slice }: Pick<FooterProps, "slice">) {
     let { name, email, message, budget } = config;
+    const [isLoading, setIsLoading] = React.useState<boolean>(false);
     let { message: { maxMessageLength, minMessageLength }, budgetAmount: { minBudget, maxBudget }, name: { maxLength }, email: { emailMaxLength } } = formConfigValues;
-    const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>({
+    const { register, formState: { errors }, handleSubmit, reset } = useForm<IFormInput>({
         criteriaMode: "all",
         mode: "onTouched",
         reValidateMode: "onSubmit"
     })
     const onSubmit: SubmitHandler<IFormInput> = (data) => {
-        fetch("/api/save-contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data),
-        }).then((response) => response.json()).then((value) => {
-            if (value.status === false) throw new Error()
-            else return value
-        }).catch((error) => { console.log(error, "error") })
+        setIsLoading(true);
+        try {
+            const newPromise = fetch("/api/save-contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data),
+            }).then((response) => response.json()).then((value) => {
+                if (value.status === false) throw new Error()
+                else {
+                    reset();
+                    setIsLoading(false);
+                };
+            }).catch((error) => { throw new Error() })
+            toast.promise(
+                newPromise,
+                {
+                    pending: { pauseOnHover: false, autoClose: 3000, hideProgressBar: true, position: "top-right", theme: "light", render: 'Sending Message...' },
+                    success: { pauseOnHover: false, autoClose: 3000, hideProgressBar: true, position: "top-right", theme: "light", render: 'Message Sent Successfully!' },
+                    error: { pauseOnHover: false, autoClose: 3000, hideProgressBar: true, position: "top-right", theme: "light", render: 'Some Error Occured!' }
+                }
+            )
+        } catch (error) {
+            toast.error('Some Error Occured!', {
+                position: "top-right",
+                autoClose: 3000,
+                draggable: true,
+                hideProgressBar: true,
+                pauseOnHover: false,
+                theme: "light",
+            });
+            reset();
+            setIsLoading(false);
+        }
     }
 
     function Inputerrors() {
@@ -54,6 +81,7 @@ export default function Customform({ slice }: Pick<FooterProps, "slice">) {
     return (
         <form id="footer" onSubmit={handleSubmit(onSubmit)} className={`${slice.primary.form_background_colour} ${slice.primary.form_font_colour} py-8 px-4 md:p-14 gap-8 flex flex-col`}>
             <div className="text-red-500 text-center md:text-justify">
+                <ToastContainer />
                 <Inputerrors />
             </div>
             <div>
@@ -75,7 +103,7 @@ export default function Customform({ slice }: Pick<FooterProps, "slice">) {
             </div>
             {
                 slice.primary.button_text &&
-                <Button btnBg={slice.primary.button_background_colour} btnTextFont={slice.primary.button_font_family} btnTextColour={slice.primary.button_font_colour}>
+                <Button disabled={isLoading} btnBg={slice.primary.button_background_colour} btnTextFont={slice.primary.button_font_family} btnTextColour={slice.primary.button_font_colour}>
                     <PrismicRichText field={slice.primary.button_text} />
                 </Button>
             }

@@ -95,6 +95,21 @@
 				"__TYPE__": "FieldContent",
 				"value": "font-ubuntu",
 				"type": "Select"
+			},
+			"from_colour_code": {
+				"__TYPE__": "FieldContent",
+				"value": "trick",
+				"type": "Text"
+			},
+			"to_colour_code": {
+				"__TYPE__": "FieldContent",
+				"value": "wore",
+				"type": "Text"
+			},
+			"via_colour_code": {
+				"__TYPE__": "FieldContent",
+				"value": "knowledge",
+				"type": "Text"
 			}
 		},
 		"items": [

@@ -1,6 +1,8 @@
 import { MyWorkProps } from '@/slices/MyWork'
+import { asLink } from '@prismicio/helpers';
 import { PrismicNextImage } from '@prismicio/next'
 import { PrismicRichText } from '@prismicio/react'
+import { useRouter } from 'next/navigation';
 import React, { JSX } from 'react'
 import Slider from "react-slick";
 export type Work = Pick<MyWorkProps, "slice">
@@ -38,6 +40,7 @@ export default function Work({ slice }: Work): JSX.Element {
       }
     ]
   };
+  const router = useRouter();
   return (
     <React.Fragment>
       <div className="mx-auto"><PrismicRichText field={slice.primary.heading} /></div>
@@ -49,8 +52,7 @@ export default function Work({ slice }: Work): JSX.Element {
                 <PrismicRichText field={item.card_title} />
                 <span>{item.work_sub_description}</span>
               </div>
-              <div className="flex mt-20 md:mt-32  justify-between">{item.read_more_button}<PrismicNextImage field={item.redirect_icon} /></div>
-              {/* <PrismicNextLink field={item.blog_link} /> */}
+              {asLink(item.blog_link) as string && <div className="flex mt-20 md:mt-32  justify-between" onClick={() => router.push(asLink(item.blog_link) as string)}>{item.read_more_button}<PrismicNextImage className='cursor-pointer' field={item.redirect_icon} /></div>}
             </div>
           ))}
         </Slider>

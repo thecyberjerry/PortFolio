@@ -48,6 +48,68 @@
             },
             "thumbnails": []
           }
+        },
+        "sidebar_content": {
+          "type": "Group",
+          "config": {
+            "label": "Sidebar Content",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "Add Navigation to Page title"
+                }
+              },
+              "navigation_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Navigation Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        },
+        "sidebar_font_family": {
+          "type": "Select",
+          "config": {
+            "label": "Sidebar Font Family",
+            "placeholder": "",
+            "options": [
+              "font-ubuntu",
+              "font-rubik"
+            ],
+            "default_value": "font-ubuntu"
+          }
+        },
+        "sidebar_background_color": {
+          "type": "Text",
+          "config": {
+            "label": "Sidebar Background Color",
+            "placeholder": ""
+          }
+        },
+        "show_contact_link": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Contact Link",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "contact_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Contact Button Text",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

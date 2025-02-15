@@ -55,7 +55,6 @@
 				"thumbnails": {}
 			},
 			"header_menu_toggle_icon": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
@@ -73,7 +72,59 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"sidebar_content": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dead",
+									"type": "Text"
+								}
+							],
+							[
+								"navigation_link",
+								{
+									"key": "d36527da-4001-4ab9-b071-8b7f6086c5ce",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "people"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"sidebar_font_family": {
+				"__TYPE__": "FieldContent",
+				"value": "font-ubuntu",
+				"type": "Select"
+			},
+			"sidebar_background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "show",
+				"type": "Text"
+			},
+			"show_contact_link": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"contact_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "island",
+				"type": "Text"
 			}
 		},
 		"items": []
