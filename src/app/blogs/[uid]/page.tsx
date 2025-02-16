@@ -1,6 +1,5 @@
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { BlogsliceProps } from "@/slices/Blogslice"
 import { SliceZone } from "@prismicio/react";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
