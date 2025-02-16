@@ -26,6 +26,7 @@ export default function BlogLayout({
             setDocuments(documents);
         }
         Fetchdata();
+        setMounted(true);
     }, []);
     function AnimatedTestimonialsDemo() {
         const allSlice = documents && documents.map(({ url, data: { slices } }: any) => {
@@ -40,16 +41,11 @@ export default function BlogLayout({
             }
             return obj
         })
-
         return React.createElement("div", { className: "mt-20 md:mt-32" }, <React.Fragment>
             {React.createElement("h2", { className: "font-ubuntu" }, "Explore my other blogs")}
             <AnimatedTestimonials testimonials={allSlice} />
         </React.Fragment>);
     }
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     return (
         <section className="px-4 md:px-32">
