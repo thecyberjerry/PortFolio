@@ -22,11 +22,9 @@ export default function Blogcard({ fontfamily, bgcolor, textcolor, children, url
                         />
                     </div>
                     <div className={`lower bg-primary text-secondary p-4 flex flex-col gap-3 md:gap-10 ${bgcolor}`}>
-                        <div className='flex justify-between'>
-                            <p>25 Commnets</p>
-                            <p>17 Likes</p>
-                            <p>By John</p>
-                        </div>
+                        <h2>
+                            {asText(item.primary.main_blog_title)}
+                        </h2>
                         <div>
                             {asText(item.primary.blog_title)?.slice(0, 140)}...
                         </div>

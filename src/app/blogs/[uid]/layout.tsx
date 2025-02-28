@@ -35,14 +35,14 @@ export default function BlogLayout({
             {
                 quote: asText(slice?.primary.blog_title) || "",
                 name: "Himanshu",
-                designation: "Web Developer | Cybersecurity Enthusiast",
+                designation: "Cybersecurity Enthusiast | Web Developer",
                 src: slice?.primary?.blog_image?.url || "",
                 redirectUrl: url!
             }
             return obj
         })
         return React.createElement("div", { className: "mt-20 md:mt-32" }, <React.Fragment>
-            {React.createElement("h2", { className: "font-ubuntu" }, "Explore my other blogs")}
+            {React.createElement("h1", { className: "font-ubuntu" }, "Explore my other blogs")}
             <AnimatedTestimonials testimonials={allSlice} />
         </React.Fragment>);
     }
