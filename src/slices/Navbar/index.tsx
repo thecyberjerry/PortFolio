@@ -20,7 +20,7 @@ const Navbar = ({ slice }: NavbarProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex justify-between items-center"
+      className="flex justify-between items-center shadow-xl rounded-b-lg sticky top-0 z-50 bg-white"
     >
       <Sidebar slice={slice} showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       {slice?.primary && <PrismicNextImage field={slice.primary.logo} className={`cursor-pointer`} onClick={() => router.push("/")} />}
