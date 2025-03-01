@@ -1,5 +1,3 @@
-"use client";
-
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -21,7 +19,7 @@ export const AnimatedTestimonials = ({
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
-
+  const [isClient, setIsClient] = useState(false);
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
   };
@@ -41,6 +39,7 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay]);
 
+  useEffect(() => setIsClient(true), []);
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
   };
@@ -50,7 +49,7 @@ export const AnimatedTestimonials = ({
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
-              {testimonials && testimonials.map((testimonial, index) => (
+              {isClient && testimonials && testimonials.map((testimonial, index) => (
                 <motion.div
                   key={index}
                   initial={{

@@ -4,7 +4,6 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { JSX } from "react";
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
-import { TracingBeam } from "@/components/ui/tracing-beam";
 /**
  * Props for `Blogslice`.
  */
@@ -22,7 +21,7 @@ export default function Blogslice({ slice }: BlogsliceProps): JSX.Element {
       className={`${slice.primary.font_family} ${slice.primary.text_colour} space-y-2`}
     >
       <SpotlightPreview slice={slice} />
-      <TracingBeamDemo slice={slice} />
+      <Blogbody slice={slice} />
     </section>
   );
 };
@@ -46,10 +45,9 @@ export function SpotlightPreview({ slice }: Spotlight): JSX.Element {
   );
 }
 
-export function TracingBeamDemo({ slice }: Spotlight): JSX.Element {
+export function Blogbody({ slice }: Spotlight): JSX.Element {
   return (
-    <TracingBeam className="px-8 md:px-6">
-      <div className="w-full mx-auto antialiased pt-4 relative">
+      <div className="w-full mx-auto antialiased pt-4 relative text-justify">
         {slice.primary.blog_text.map((item, index: number) => (
           <React.Fragment key={index}>
             <div key={index}>
@@ -63,7 +61,6 @@ export function TracingBeamDemo({ slice }: Spotlight): JSX.Element {
           </React.Fragment>
         ))}
       </div>
-    </TracingBeam>
   );
 }
 
